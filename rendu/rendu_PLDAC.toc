@@ -1,0 +1,12 @@
+\contentsline {part}{I\hspace {1em}Intro}{1}
+\contentsline {section}{\numberline {1}Decription du dataset}{1}
+\contentsline {section}{\numberline {2}Les dif\IeC {\'e}rentes m\IeC {\'e}thodes}{2}
+\contentsline {part}{II\hspace {1em}R\IeC {\'e}sultat des diff\IeC {\'e}rents algorithmes}{2}
+\contentsline {section}{\numberline {1}Perceptron sur les donn\IeC {\'e}es brut}{3}
+\contentsline {section}{\numberline {2}KNN sur les donn\IeC {\'e}es brut}{4}
+\contentsline {section}{\numberline {3}Riemann Cov MDM }{5}
+\contentsline {section}{\numberline {4}Riemann Cov KNN }{6}
+\contentsline {section}{\numberline {5}Perceptron filtre passe bas }{7}
+\contentsline {section}{\numberline {6}KNN filtre passe bas }{8}
+\contentsline {section}{\numberline {7}Perceptron transform\IeC {\'e}e de fourier }{9}
+\contentsline {section}{\numberline {8}KNN transform\IeC {\'e}e de fourier }{10}
