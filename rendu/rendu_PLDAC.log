@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.2.8)  15 FEB 2019 10:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.2.8)  21 FEB 2019 18:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1219,106 +1219,111 @@ Underfull \hbox (badness 10000) in paragraph at lines 83--92
  []
 
 [1 <./images/donnees_entree.png>]
-<images/perceptron_brut_f1Score.png, id=24, 389.455pt x 252.945pt>
-File: images/perceptron_brut_f1Score.png Graphic file (type png)
-<use images/perceptron_brut_f1Score.png>
-Package pdftex.def Info: images/perceptron_brut_f1Score.png  used on input line
- 96.
-(pdftex.def)             Requested size: 389.45404pt x 252.94438pt.
+<images/f1_score_knn_brut.png, id=24, 416.55624pt x 279.0425pt>
+File: images/f1_score_knn_brut.png Graphic file (type png)
+<use images/f1_score_knn_brut.png>
+Package pdftex.def Info: images/f1_score_knn_brut.png  used on input line 102.
+(pdftex.def)             Requested size: 416.55522pt x 279.04181pt.
 
-Overfull \hbox (44.45404pt too wide) in paragraph at lines 96--97
+Overfull \hbox (71.55522pt too wide) in paragraph at lines 102--103
  [] 
  []
 
 [2]
-<images/knn_brut_f1Score.png, id=28, 382.42876pt x 252.945pt>
-File: images/knn_brut_f1Score.png Graphic file (type png)
-<use images/knn_brut_f1Score.png>
-Package pdftex.def Info: images/knn_brut_f1Score.png  used on input line 106.
-(pdftex.def)             Requested size: 382.42781pt x 252.94438pt.
-
-Overfull \hbox (37.42781pt too wide) in paragraph at lines 106--107
- [] 
- []
-
-[3 <./images/perceptron_brut_f1Score.png>]
-<images/riemann_cov_MDM_f1Score.png, id=36, 382.42876pt x 252.945pt>
+<images/riemann_cov_MDM_f1Score.png, id=31, 382.42876pt x 252.945pt>
 File: images/riemann_cov_MDM_f1Score.png Graphic file (type png)
 <use images/riemann_cov_MDM_f1Score.png>
 Package pdftex.def Info: images/riemann_cov_MDM_f1Score.png  used on input line
- 116.
+ 112.
 (pdftex.def)             Requested size: 382.42781pt x 252.94438pt.
 
-Overfull \hbox (37.42781pt too wide) in paragraph at lines 116--117
+Overfull \hbox (37.42781pt too wide) in paragraph at lines 112--113
  [] 
  []
 
-[4 <./images/knn_brut_f1Score.png>]
-<images/riemann_cov_knn_f1Score.png, id=41, 386.44376pt x 252.945pt>
-File: images/riemann_cov_knn_f1Score.png Graphic file (type png)
-<use images/riemann_cov_knn_f1Score.png>
-Package pdftex.def Info: images/riemann_cov_knn_f1Score.png  used on input line
- 133.
-(pdftex.def)             Requested size: 386.44281pt x 252.94438pt.
-
-Overfull \hbox (41.44281pt too wide) in paragraph at lines 133--134
- [] 
- []
-
-[5 <./images/riemann_cov_MDM_f1Score.png>]
-<images/perceptron_passe_bas_f1Score.png, id=47, 389.455pt x 252.945pt>
-File: images/perceptron_passe_bas_f1Score.png Graphic file (type png)
-<use images/perceptron_passe_bas_f1Score.png>
-Package pdftex.def Info: images/perceptron_passe_bas_f1Score.png  used on input
- line 150.
+[3 <./images/f1_score_knn_brut.png>]
+<images/perceptron_passe_bas_f1Score_ffffffffffffffffffffffffffffffffff.png, id
+=36, 389.455pt x 252.945pt>
+File: images/perceptron_passe_bas_f1Score_ffffffffffffffffffffffffffffffffff.pn
+g Graphic file (type png)
+<use images/perceptron_passe_bas_f1Score_ffffffffffffffffffffffffffffffffff.png
+>
+Package pdftex.def Info: images/perceptron_passe_bas_f1Score_ffffffffffffffffff
+ffffffffffffffff.png  used on input line 129.
 (pdftex.def)             Requested size: 389.45404pt x 252.94438pt.
 
-Overfull \hbox (44.45404pt too wide) in paragraph at lines 150--151
+Overfull \hbox (44.45404pt too wide) in paragraph at lines 129--130
  [] 
  []
 
-[6 <./images/riemann_cov_knn_f1Score.png>]
-<images/knn_passe_bas_f1Score.png, id=52, 382.42876pt x 252.945pt>
+[4 <./images/riemann_cov_MDM_f1Score.png>]
+File: images/perceptron_passe_bas_f1Score_ffffffffffffffffffffffffffffffffff.pn
+g Graphic file (type png)
+<use images/perceptron_passe_bas_f1Score_ffffffffffffffffffffffffffffffffff.png
+>
+Package pdftex.def Info: images/perceptron_passe_bas_f1Score_ffffffffffffffffff
+ffffffffffffffff.png  used on input line 146.
+(pdftex.def)             Requested size: 389.45404pt x 252.94438pt.
+
+Overfull \hbox (44.45404pt too wide) in paragraph at lines 146--147
+ [] 
+ []
+
+[5 <./images/perceptron_passe_bas_f1Score_ffffffffffffffffffffffffffffffffff.pn
+g>]
+<images/knn_passe_bas_f1Score.png, id=46, 382.42876pt x 252.945pt>
 File: images/knn_passe_bas_f1Score.png Graphic file (type png)
 <use images/knn_passe_bas_f1Score.png>
 Package pdftex.def Info: images/knn_passe_bas_f1Score.png  used on input line 1
-67.
+58.
 (pdftex.def)             Requested size: 382.42781pt x 252.94438pt.
 
-Overfull \hbox (37.42781pt too wide) in paragraph at lines 167--168
+Overfull \hbox (37.42781pt too wide) in paragraph at lines 158--159
  [] 
  []
 
-[7 <./images/perceptron_passe_bas_f1Score.png>]
-<images/perceptron_tf_f1Score.png, id=57, 382.42876pt x 252.945pt>
+[6]
+Overfull \hbox (105.61337pt too wide) in paragraph at lines 163--169
+\OML/cmm/m/it/10 neigh \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 KNeighborsClassifier\
+OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n[]eighbors \OT1/cmr/m/n/10 = 10)\OML/cmm/m/it
+/10 y[]red \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 cross[]al[]redict\OT1/cmr/m/n/10 
+(\OML/cmm/m/it/10 neigh; donnees; labels; cv \OT1/cmr/m/n/10 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--169
+
+ []
+
+<images/perceptron_tf_f1Score.png, id=50, 382.42876pt x 252.945pt>
 File: images/perceptron_tf_f1Score.png Graphic file (type png)
 <use images/perceptron_tf_f1Score.png>
 Package pdftex.def Info: images/perceptron_tf_f1Score.png  used on input line 1
-85.
+74.
 (pdftex.def)             Requested size: 382.42781pt x 252.94438pt.
 
-Overfull \hbox (37.42781pt too wide) in paragraph at lines 185--186
+Overfull \hbox (37.42781pt too wide) in paragraph at lines 174--175
  [] 
  []
 
-[8 <./images/knn_passe_bas_f1Score.png>]
-<images/knn_tf_f1Score.png, id=62, 382.42876pt x 252.945pt>
+[7 <./images/knn_passe_bas_f1Score.png>]
+<images/knn_tf_f1Score.png, id=55, 382.42876pt x 252.945pt>
 File: images/knn_tf_f1Score.png Graphic file (type png)
 <use images/knn_tf_f1Score.png>
-Package pdftex.def Info: images/knn_tf_f1Score.png  used on input line 202.
+Package pdftex.def Info: images/knn_tf_f1Score.png  used on input line 191.
 (pdftex.def)             Requested size: 382.42781pt x 252.94438pt.
 
-Overfull \hbox (37.42781pt too wide) in paragraph at lines 202--203
+Overfull \hbox (37.42781pt too wide) in paragraph at lines 191--192
  [] 
  []
 
-[9 <./images/perceptron_tf_f1Score.png>] [10 <./images/knn_tf_f1Score.png>]
+[8 <./images/perceptron_tf_f1Score.png>] [9 <./images/knn_tf_f1Score.png>]
 (./rendu_PLDAC.aux) ) 
 Here is how much of TeX's memory you used:
- 33431 strings out of 494880
- 751769 string characters out of 6179602
+ 33421 strings out of 494880
+ 751585 string characters out of 6179602
  770664 words of memory out of 5000000
- 36382 multiletter control sequences out of 15000+600000
+ 36374 multiletter control sequences out of 15000+600000
  535962 words of font info for 42 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  123i,9n,153p,10390b,1733s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1330,10 +1335,10 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on rendu_PLDAC.pdf (12 pages, 265849 bytes).
+Output written on rendu_PLDAC.pdf (11 pages, 245679 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 91 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 63 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

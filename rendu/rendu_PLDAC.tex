@@ -91,19 +91,15 @@ La méthode 6 et 7 ne devrais pas fonctioner car avec une seule données c'est d
 La méthode 8 et 9 ne devrais pas fonctionner car il n'y aura pas invariance par translation et on ne pourra pas connaitre le debut.
 \part{Résultat des différents algorithmes}
 \section{Perceptron sur les données brut}
-\begin{figure}[H]
-\begin{center}
-\includegraphics[scale=1]{images/perceptron_brut_f1Score.png}
-\end{center}
-\caption{F1 score(en cross validation) du perceptron en fonction du pourcentage des données utilisé pour le train}
-\end{figure}
 $
 clf = SGDClassifier(loss="perceptron", eta0=1e-4, learning_rate="constant", penalty=None,tol=1e-1,max_iter=10000,shuffle=True)
 $
+Cross validation avec 5 parties :\\
+F1 Score : 0.5390625
 \section{KNN sur les données brut}
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=1]{images/knn_brut_f1Score.png}
+\includegraphics[scale=1]{images/f1_score_knn_brut.png}
 \end{center}
 \caption{F1 Score(en cross validation) du knn en fonction du pourcentage des données utilisé pour le train}
 \end{figure}
@@ -151,10 +147,9 @@ $
 \end{center}
 \caption{F1 Score(en cross validation) du perceptron en fonction du pourcentage des données utilisé pour le train}
 \end{figure}
-\\
+modele :\\
 $
- clf = SGDClassifier(loss="perceptron", eta0=1e-4, learning_rate="constant", penalty=None,tol=1e-1,max_iter=10000,shuffle=True)
-    
+ clf = SGDClassifier(loss="perceptron", eta0=1e-4, learning_rate="constant", penalty=None,tol=1e-1,max_iter=10000,shuffle=True)    
 $
 
 \section{KNN filtre passe bas }
