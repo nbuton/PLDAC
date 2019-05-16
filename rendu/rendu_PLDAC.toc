@@ -1,12 +1,34 @@
-\contentsline {part}{I\hspace {1em}Intro}{1}
-\contentsline {section}{\numberline {1}Decription du dataset}{1}
-\contentsline {section}{\numberline {2}Les dif\IeC {\'e}rentes m\IeC {\'e}thodes}{2}
-\contentsline {part}{II\hspace {1em}R\IeC {\'e}sultat des diff\IeC {\'e}rents algorithmes}{2}
-\contentsline {section}{\numberline {1}Perceptron sur les donn\IeC {\'e}es brut}{2}
-\contentsline {section}{\numberline {2}KNN sur les donn\IeC {\'e}es brut}{3}
-\contentsline {section}{\numberline {3}Riemann Cov MDM }{4}
-\contentsline {section}{\numberline {4}Riemann Cov KNN }{5}
-\contentsline {section}{\numberline {5}Perceptron filtre passe bas }{6}
-\contentsline {section}{\numberline {6}KNN filtre passe bas }{7}
-\contentsline {section}{\numberline {7}Perceptron transform\IeC {\'e}e de fourier }{8}
-\contentsline {section}{\numberline {8}KNN transform\IeC {\'e}e de fourier }{9}
+\contentsline {part}{I\hspace {1em}Introduction}{1}
+\contentsline {part}{II\hspace {1em}\IeC {\'E}tat de l'art - la g\IeC {\'e}ometrie de riemann}{1}
+\contentsline {section}{\numberline {1}Distance}{2}
+\contentsline {section}{\numberline {2}Point moyen}{2}
+\contentsline {section}{\numberline {3}Espace tangent}{2}
+\contentsline {part}{III\hspace {1em}Les diff\IeC {\'e}rents mod\IeC {\`e}les}{3}
+\contentsline {subsection}{\numberline {0.1}Format des donn\IeC {\'e}es}{3}
+\contentsline {subsection}{\numberline {0.2}Description des mod\IeC {\`e}les}{4}
+\contentsline {paragraph}{1 et 2 - SVM et KNNavec une transformer de fourrier}{4}
+\contentsline {paragraph}{3,4 et 5 - SVM,MDM et KNN avec matrice de covariance }{4}
+\contentsline {paragraph}{6 et 7 - SVM et KNN sur les donn\IeC {\'e}es brut}{4}
+\contentsline {paragraph}{8 et 9 - SVM et KNN avec un filtre passe bas}{4}
+\contentsline {paragraph}{8 - Chaine de traitement riemannienne}{4}
+\contentsline {part}{IV\hspace {1em}Experimentations}{7}
+\contentsline {section}{\numberline {1}Prise en main sur un dataset simple}{7}
+\contentsline {subsection}{\numberline {1.1}Decription du dataset eye close/eye open}{7}
+\contentsline {subsection}{\numberline {1.2}R\IeC {\'e}sultat des diff\IeC {\'e}rents algorithmes}{9}
+\contentsline {subsubsection}{\numberline {1.2.1}Valeurs de k pour les diff\IeC {\'e}rents KNN}{9}
+\contentsline {paragraph}{KNN sur les donn\IeC {\'e}es brut}{9}
+\contentsline {paragraph}{Riemann Cov KNN }{10}
+\contentsline {paragraph}{KNN filtre passe bas }{10}
+\contentsline {paragraph}{KNN transform\IeC {\'e}e de fourier }{11}
+\contentsline {subsubsection}{\numberline {1.2.2}Etudes sur la longueur de la fennettre optimale}{11}
+\contentsline {paragraph}{SVM sur les donn\IeC {\'e}es brut}{11}
+\contentsline {paragraph}{Riemann Cov MDM }{12}
+\contentsline {paragraph}{SVM filtre passe bas }{13}
+\contentsline {paragraph}{SVM transform\IeC {\'e}e de fourier }{13}
+\contentsline {subsubsection}{\numberline {1.2.3}Tableau r\IeC {\'e}capiltulatif}{13}
+\contentsline {section}{\numberline {2}Brain Invader}{14}
+\contentsline {subsection}{\numberline {2.1}Description de la tache de machine learning}{14}
+\contentsline {section}{\numberline {3}DecMeg2014}{15}
+\contentsline {subsection}{\numberline {3.1}Description du dataset}{15}
+\contentsline {subsection}{\numberline {3.2}M\IeC {\'e}thode d'\IeC {\'e}valuation}{16}
+\contentsline {part}{V\hspace {1em}Conclusion}{16}

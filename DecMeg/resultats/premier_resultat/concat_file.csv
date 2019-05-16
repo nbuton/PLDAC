@@ -1,0 +1,6 @@
+nom du fichier,1.5 seconde
+resultats/premier_resultat/resultat_passe_bas_SVM.csv,"[0.3333333333333333, 0.0, 0.6666666666666666]"
+resultats/premier_resultat/resultat_riemann_MDM.csv,"[0.5288707378584757, 0.5126727730564373, 0.5450687026605141]"
+resultats/premier_resultat/resultat_SVM_tf.csv,"[0.3333333333333333, 0.0, 0.6666666666666666]"
+resultats/premier_resultat/resultat_SVM_brut.csv,"[0.3333333333333333, 0.0, 0.6666666666666666]"
+resultats/premier_resultat/resultat_conv1D.csv,"[0.3333333333333333, 0.4, 0.26666666666666666]"

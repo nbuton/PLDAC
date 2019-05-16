@@ -1,0 +1,6 @@
+"nom du fichier","1 seconde","0.1 seconde","0.04 seconde"
+"resultats/resultat_acc_ask_in_kaggle/resultat_passe_bas_SVM.csv","0.5"
+"resultats/resultat_acc_ask_in_kaggle/resultat_riemann_MDM.csv","0.5677966101694916"
+"resultats/resultat_acc_ask_in_kaggle/resultat_SVM_tf.csv","0.5"
+"resultats/resultat_acc_ask_in_kaggle/resultat_SVM_brut.csv","0.5"
+"resultats/resultat_acc_ask_in_kaggle/resultat_conv1D.csv","0.5"

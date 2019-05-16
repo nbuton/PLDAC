@@ -1,0 +1,9 @@
+nom du fichier,1 seconde,0.5 seconde,0.04 seconde,moyenne
+resultats/resultat_perceptron_brut_test_1_file_per_subject_add_r_0_5.csv,0.214285714285714,0.125,0.181818181818182,0.173701298701299
+resultats/resultat_passe_bas_perceptron_test_1_file_per_subject_add_r_0_5.csv,0.235294117647059,0.214285714285714,0,0.149859943977591
+resultats/resultat_perceptron_tf_test_1_file_per_subject_add_r_0_5.csv,0.25,0,0.25,0.166666666666667
+resultats/resultat_cov_perceptron_test_1_file_per_subject_add_r_0_5.csv,0.182539682539683,0.181818181818182,0,0.121452621452621
+resultats/resultat_passe_bas_KNN_test_1_file_per_subject_add_r_0_5.csv,0.002487562189055,0.007380073800738,0.004889975550122,0.004919203846638
+resultats/resultat_riemann_MDM_test_1_file_per_subject_add_r_0_5.csv,0.269889224572004,0.27613674078991,0.249661705006766,0.265229223456227
+resultats/resultat_knn_brut_test_1_file_per_subject_add_r_0_5.csv,0.071287128712871,0.025581395348837,0.027681660899654,0.041516728320454
+resultats/resultat_knn_tf_test_1_file_per_subject_add_r_0_5.csv,0.019002375296912,0.103741496598639,0.124804992199688,0.082516288031747

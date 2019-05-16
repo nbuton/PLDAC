@@ -1,0 +1,6 @@
+"nom du fichier","1 seconde","0.1 seconde","0.04 seconde"
+"resultats/resultat_avec_filtrage/resultat_passe_bas_SVM.csv","[0.0, 0.6666666666666666]"
+"resultats/resultat_avec_filtrage/resultat_riemann_MDM.csv","[0.6130262194842647, 0.5837729510518285]"
+"resultats/resultat_avec_filtrage/resultat_SVM_tf.csv","[0.0, 0.6666666666666666]"
+"resultats/resultat_avec_filtrage/resultat_SVM_brut.csv","[0.0, 0.6666666666666666]"
+"resultats/resultat_avec_filtrage/resultat_conv1D.csv","[0.5333333333333333, 0.13333333333333333]"
