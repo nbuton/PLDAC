@@ -114,6 +114,11 @@ class GenericModele():
     def fit(self):
         self.modele.fit(self.data, self.labels)
 
+    def score(self,donnees,labels):
+        y_pred = self.modele.predict(donnees)
+        rapport = classification_report(labels, y_pred, output_dict=True)
+        return rapport
+
     def f1Score(self,mode="nonProba"):
         skf = StratifiedKFold(n_splits=5)
 
@@ -139,14 +144,16 @@ class GenericModele():
                 moyenne_rapport=rapport
             else:
                 for key1 in rapport.keys() :
-                    for key2 in rapport[key1].keys() :
-                        moyenne_rapport[key1][key2]+=rapport[key1][key2]
+                    if(not(isinstance(rapport[key1],float))):
+                        for key2 in rapport[key1].keys() :
+                            moyenne_rapport[key1][key2]+=rapport[key1][key2]
 
 
         nbSplit = skf.get_n_splits(self.data, self.labels)
         for key1 in rapport.keys() :
-            for key2 in rapport[key1].keys() :
-                moyenne_rapport[key1][key2]/= nbSplit
+            if(not(isinstance(rapport[key1],float))):
+                for key2 in rapport[key1].keys() :
+                    moyenne_rapport[key1][key2]/= nbSplit
 
-        return [moyenne_rapport["0"]["f1-score"],moyenne_rapport["1"]["f1-score"]]
+        return moyenne_rapport
         #return acc

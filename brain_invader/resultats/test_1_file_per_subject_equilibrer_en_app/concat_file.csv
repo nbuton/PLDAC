@@ -1,10 +1,10 @@
-nom du fichier,1 seconde,0.1 seconde,0.04 seconde
-resultats/test_1_file_per_subject_equilibrer_en_app/resultat_perceptron_brut.csv,0.323051948051948,0.326461038961039,0.267532467532467
-resultats/test_1_file_per_subject_equilibrer_en_app/resultat_perceptron_tf.csv,0.451136363636364,0.323051948051948,0.408313347178491
-resultats/test_1_file_per_subject_equilibrer_en_app/resultat_riemann_MDM.csv,0.441884775795033,0.450794330760887,0.441463342031226
-resultats/test_1_file_per_subject_equilibrer_en_app/resultat_knn_brut.csv,0.391033345601445,0.421304978708651,0.477791812169029
-resultats/test_1_file_per_subject_equilibrer_en_app/resultat_cov_perceptron.csv,0.293170459768325,0.32987012987013,0.267283968878502
-resultats/test_1_file_per_subject_equilibrer_en_app/resultat_passe_bas_KNN.csv,0.468170847379269,0.417829605960706,0.467431891494059
-resultats/test_1_file_per_subject_equilibrer_en_app/resultat_knn_tf.csv,0.399253802094698,0.470427433051929,0.453723364485908
-resultats/test_1_file_per_subject_equilibrer_en_app/resultat_passe_bas_perceptron.csv,0.267532467532467,0.326461038961039,0.451136363636364
-resultats/test_1_file_per_subject_equilibrer_en_app/resultat_conv1D.csv,0.384761943288956,0.326461038961039,0.33686397710642
+nom du fichier,1 seconde,"0,1 seconde","0,04 seconde",
+"resultats/test_1_file_per_subject_equilibrer_en_app/resultat_cov_perceptron,csv","0,293170459768325","0,32987012987013","0,267283968878502","0,890324558516957"
+"resultats/test_1_file_per_subject_equilibrer_en_app/resultat_perceptron_brut,csv","0,323051948051948","0,326461038961039","0,267532467532467","0,917045454545454"
+"resultats/test_1_file_per_subject_equilibrer_en_app/resultat_passe_bas_perceptron,csv","0,267532467532467","0,326461038961039","0,451136363636364","1,04512987012987"
+"resultats/test_1_file_per_subject_equilibrer_en_app/resultat_conv1D,csv","0,384761943288956","0,326461038961039","0,33686397710642","1,04808695935642"
+"resultats/test_1_file_per_subject_equilibrer_en_app/resultat_perceptron_tf,csv","0,451136363636364","0,323051948051948","0,408313347178491","1,1825016588668"
+"resultats/test_1_file_per_subject_equilibrer_en_app/resultat_knn_brut,csv","0,391033345601445","0,421304978708651","0,477791812169029","1,29013013647913"
+"resultats/test_1_file_per_subject_equilibrer_en_app/resultat_knn_tf,csv","0,399253802094698","0,470427433051929","0,453723364485908","1,32340459963254"
+"resultats/test_1_file_per_subject_equilibrer_en_app/resultat_riemann_MDM,csv","0,441884775795033","0,450794330760887","0,441463342031226","1,33414244858715"
+"resultats/test_1_file_per_subject_equilibrer_en_app/resultat_passe_bas_KNN,csv","0,468170847379269","0,417829605960706","0,467431891494059","1,35343234483403"

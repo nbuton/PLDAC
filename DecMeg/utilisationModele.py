@@ -273,24 +273,23 @@ def saveResult(name,result):
     for r in result:
         wr.writerow(r)
 
-nomTest = "temporaire"
+nomTest = "test_all_other_model_1train_1test"
 
-os.mkdir("resultats/"+nomTest)
-
-myFileList=["data/train/train_subject01.mat","data/train/train_subject02.mat"]
-#myFileList = getListOfFiles("data/train/")
+myFileList=["data/train/train_subject1.mat"]
+#myFileList = getListOfFiles("data/train/")[:4]
 
 mesDonnees = dict()
-mesDonnees[1.5]=dataLoader.DataLoader(myFileList,concatenate=False)
-print("j'ai enlevé le filtre passe bande car les matrices netaits plus définit positives apres")
+mesDonnees[1.5]=dataLoader.DataLoader(myFileList,concatenate=True)
+#print("j'ai enlevé le filtre passe bande car les matrices netaits plus définit positives apres")
 #mesDonnees[1.5].filtre_Matrice()
 print(len(mesDonnees[1.5].data))
 print(len(mesDonnees[1.5].labels))
 
-saveResult("resultats/"+nomTest+"/resultat_riemann_MDM_xDawn.csv",test_all_pipeline(mesDonnees))
-print("Attention nouveau pre processing uniquement pour pyriemann")
+#saveResult("resultats/"+nomTest+"/resultat_riemann_MDM_xDawn.csv",test_all_pipeline(mesDonnees))
+#print("Attention nouveau pre processing uniquement pour pyriemann")
 #saveResult("resultats/"+nomTest+"/resultat_riemann_MDM_xDawn.csv",testRiemannMDMPlusXdawn(mesDonnees))
-"""
+os.mkdir("resultats/"+nomTest)
+
 saveResult("resultats/"+nomTest+"/resultat_riemann_MDM.csv",testRiemannMDM(mesDonnees))
 
 #saveResult("resultats/"+nomTest+"/resultat_riemann_KNN.csv",testRiemannKNN(mesDonnees))
@@ -300,14 +299,17 @@ saveResult("resultats/"+nomTest+"/resultat_SVM_brut.csv",testSVMBrut(mesDonnees)
 #saveResult("resultats/"+nomTest+"/resultat_knn_brut.csv",testKNNBrut(mesDonnees))
 
 #saveResult("resultats/"+nomTest+"/resultat_cov_SVM.csv",testCovSVM(mesDonnees))
-
-saveResult("resultats/"+nomTest+"/resultat_passe_bas_SVM.csv",testSVMPaseBas(10,4,mesDonnees))
-
+try :
+    saveResult("resultats/"+nomTest+"/resultat_passe_bas_SVM.csv",testSVMPaseBas(10,4,mesDonnees))
+except:
+    print("Erreur passe bas SVM")
 #saveResult("resultats/"+nomTest+"/resultat_passe_bas_KNN.csv",testKNNPaseBas(10,4,mesDonnees))
-
-saveResult("resultats/"+nomTest+"/resultat_SVM_tf.csv",testSVMTF(mesDonnees))
-
+try:
+    saveResult("resultats/"+nomTest+"/resultat_SVM_tf.csv",testSVMTF(mesDonnees))
+except:
+    print("Erreur tf SVM")
 #saveResult("resultats/"+nomTest+"/resultat_knn_tf.csv",testKNNTF(mesDonnees))
-
-saveResult("resultats/"+nomTest+"/resultat_conv1D.csv",testCNN1DKeras(mesDonnees))
-"""
+try:
+    saveResult("resultats/"+nomTest+"/resultat_conv1D.csv",testCNN1DKeras(mesDonnees))
+except:
+    print("Erreur conv1D SVM")

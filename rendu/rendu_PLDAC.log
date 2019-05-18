@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.11)  16 MAY 2019 20:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.11)  18 MAY 2019 20:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1153,6 +1153,30 @@ Now handling font encoding U ...
 (/usr/share/texlive/texmf-dist/tex/latex/chngcntr/chngcntr.sty
 Package: chngcntr 2009/09/02 v1.0a change counter resetting
 )
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen266
+\captionmargin@=\dimen267
+\captionwidth=\dimen268
+\caption@tempdima=\dimen269
+\caption@indent=\dimen270
+\caption@parindent=\dimen271
+\caption@hangindent=\dimen272
+)
+\c@ContinuedFloat=\count315
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+)
+\c@subfigure=\count316
+\c@subtable=\count317
+)
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
@@ -1166,18 +1190,21 @@ Package ifvtex Info: VTeX not detected.
 (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count315
-\Gm@cntv=\count316
-\c@Gm@tempcnt=\count317
-\Gm@bindingoffset=\dimen266
-\Gm@wd@mp=\dimen267
-\Gm@odd@mp=\dimen268
-\Gm@even@mp=\dimen269
-\Gm@layoutwidth=\dimen270
-\Gm@layoutheight=\dimen271
-\Gm@layouthoffset=\dimen272
-\Gm@layoutvoffset=\dimen273
+\Gm@cnth=\count318
+\Gm@cntv=\count319
+\c@Gm@tempcnt=\count320
+\Gm@bindingoffset=\dimen273
+\Gm@wd@mp=\dimen274
+\Gm@odd@mp=\dimen275
+\Gm@even@mp=\dimen276
+\Gm@layoutwidth=\dimen277
+\Gm@layoutheight=\dimen278
+\Gm@layouthoffset=\dimen279
+\Gm@layoutvoffset=\dimen280
 \Gm@dimlist=\toks57
+)
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryquotes.code.tex
@@ -1186,11 +1213,27 @@ File: tikzlibraryquotes.code.tex 2014/03/21 v3.0.1a (rcs-revision 1.4)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.
 code.tex
 File: pgflibraryarrows.meta.code.tex 2015/05/13 v3.0.1a (rcs-revision 1.13)
-\pgfarrowinset=\dimen274
-\pgfarrowlength=\dimen275
-\pgfarrowwidth=\dimen276
-\pgfarrowlinewidth=\dimen277
-) (./rendu_PLDAC.aux)
+\pgfarrowinset=\dimen281
+\pgfarrowlength=\dimen282
+\pgfarrowwidth=\dimen283
+\pgfarrowlinewidth=\dimen284
+) (./rendu_PLDAC.aux
+
+LaTeX Warning: Label `fig:mean and std of net14' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:mean and std of net14' multiply defined.
+
+
+LaTeX Warning: Label `fig:mean and std of net24' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:mean and std of net24' multiply defined.
+
+
+LaTeX Warning: Label `fig:mean and std of nets' multiply defined.
+
+)
 \openout1 = `rendu_PLDAC.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
@@ -1205,20 +1248,19 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
 LaTeX Font Info:    ... okay on input line 94.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
 LaTeX Font Info:    ... okay on input line 94.
-\c@lstlisting=\count318
-
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+\c@lstlisting=\count321
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count319
-\scratchdimen=\dimen278
+\scratchcounter=\count322
+\scratchdimen=\dimen285
 \scratchbox=\box81
-\nofMPsegments=\count320
-\nofMParguments=\count321
+\nofMPsegments=\count323
+\nofMParguments=\count324
 \everyMPshowfont=\toks58
-\MPscratchCnt=\count322
-\MPscratchDim=\dimen279
-\MPnumerator=\count323
-\makeMPintoPDFobject=\count324
+\MPscratchCnt=\count325
+\MPscratchDim=\dimen286
+\MPnumerator=\count326
+\makeMPintoPDFobject=\count327
 \everyMPtoPDFconversion=\toks59
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1273,6 +1315,9 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1325,11 +1370,23 @@ Package pdftex.def Info: images/logoSorbonne.jpg  used on input line 98.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/logoSorbonne.jpg>
 ]
-(./rendu_PLDAC.toc)
+(./rendu_PLDAC.toc [2])
 \tf@toc=\write5
 \openout5 = `rendu_PLDAC.toc'.
 
- [2]
+ [3]
+Overfull \hbox (8.41145pt too wide) in paragraph at lines 105--106
+\OT1/cmr/m/n/10 Les sig-naux ^^Setudi^^Se seront des sig-naux d'[]Electroenc^^S
+ephalographie(EEG) et de Magn^^Setoenc^^Sephalographie(MEG).
+ []
+
+
+Overfull \hbox (3.16243pt too wide) in paragraph at lines 105--106
+\OT1/cmr/m/n/10 en-reg-istre l'activit^^Se magn^^Setique in-duite par l'activit
+^^Se des neu-rones gr^ace a un en-sem-ble de magn^^Setom^^Retre.Notre
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 105--106
 
  []
@@ -1340,243 +1397,201 @@ Underfull \hbox (badness 10000) in paragraph at lines 107--108
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
-
-Overfull \hbox (23.41145pt too wide) in paragraph at lines 113--129
-[]\OT1/cmr/m/n/10 Les sig-naux ^^Setudi^^Se seront des sig-naux d'[]Electroenc^
-^Sephalographie(EEG) et de Magn^^Setoenc^^Sephalographie(MEG).
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--129
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--129
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--129
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--129
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--129
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--129
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
-
- []
-
 [1]
-LaTeX Font Info:    Try loading font information for U+euf on input line 150.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--120
+
+ []
+
+LaTeX Font Info:    Try loading font information for U+euf on input line 136.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-<images/Riemann_tangent_space.png, id=21, 626.34pt x 300.12125pt>
+<images/Riemann_tangent_space.png, id=24, 626.34pt x 300.12125pt>
 File: images/Riemann_tangent_space.png Graphic file (type png)
 <use images/Riemann_tangent_space.png>
 Package pdftex.def Info: images/Riemann_tangent_space.png  used on input line 1
-61.
+47.
 (pdftex.def)             Requested size: 313.16922pt x 150.06026pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 165--168
-
- []
-
-[2 <./images/Riemann_tangent_space.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 206--218
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 151--154
 
  []
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
+[3 <./images/Riemann_tangent_space.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 182--188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--237
+Underfull \hbox (badness 10000) in paragraph at lines 190--199
 
  []
 
-<images/butterworth_filter.png, id=36, 576.1525pt x 437.635pt>
-File: images/butterworth_filter.png Graphic file (type png)
-<use images/butterworth_filter.png>
-Package pdftex.def Info: images/butterworth_filter.png  used on input line 240.
 
-(pdftex.def)             Requested size: 230.45691pt x 175.05089pt.
-[4]
-<images/P_moyen.png, id=41, 215.80624pt x 70.2625pt>
-File: images/P_moyen.png Graphic file (type png)
-<use images/P_moyen.png>
-Package pdftex.def Info: images/P_moyen.png  used on input line 248.
-(pdftex.def)             Requested size: 172.64522pt x 56.21005pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 245--251
+Underfull \hbox (badness 10000) in paragraph at lines 200--202
 
  []
 
-<images/spatial_filtering.png, id=42, 272.01625pt x 72.27pt>
-File: images/spatial_filtering.png Graphic file (type png)
-<use images/spatial_filtering.png>
-Package pdftex.def Info: images/spatial_filtering.png  used on input line 256.
-(pdftex.def)             Requested size: 217.61328pt x 57.81606pt.
-<images/Zi.png, id=43, 116.435pt x 47.17625pt>
-File: images/Zi.png Graphic file (type png)
-<use images/Zi.png>
-Package pdftex.def Info: images/Zi.png  used on input line 264.
-(pdftex.def)             Requested size: 93.14812pt x 37.74103pt.
-[5 <./images/butterworth_filter.png> <./images/P_moyen.png> <./images/spatial_f
-iltering.png>]
-<images/features_space.png, id=51, 216.81pt x 104.39pt>
-File: images/features_space.png Graphic file (type png)
-<use images/features_space.png>
-Package pdftex.def Info: images/features_space.png  used on input line 272.
-(pdftex.def)             Requested size: 173.44823pt x 83.51208pt.
-<images/covariance.png, id=52, 133.49875pt x 56.21pt>
-File: images/covariance.png Graphic file (type png)
-<use images/covariance.png>
-Package pdftex.def Info: images/covariance.png  used on input line 279.
-(pdftex.def)             Requested size: 106.79912pt x 44.96805pt.
- [6 <./images/Zi.png> <./images/features_space.png> <./images/covariance.png>]
-<images/donnees_entree.png, id=59, 400.49625pt x 252.945pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
+
+ []
+
+[4] [5] [6] [7]
+<images/donnees_entree.png, id=53, 400.49625pt x 252.945pt>
 File: images/donnees_entree.png Graphic file (type png)
 <use images/donnees_entree.png>
-Package pdftex.def Info: images/donnees_entree.png  used on input line 317.
+Package pdftex.def Info: images/donnees_entree.png  used on input line 278.
 (pdftex.def)             Requested size: 320.39743pt x 202.35626pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 310--320
+Underfull \hbox (badness 10000) in paragraph at lines 271--281
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 310--320
+Underfull \hbox (badness 10000) in paragraph at lines 271--281
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 310--320
+Underfull \hbox (badness 10000) in paragraph at lines 271--281
 
  []
 
-[7]
-<images/f1_score_knn_brut.png, id=63, 416.55624pt x 279.0425pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--287
+
+ []
+
+[8 <./images/donnees_entree.png>]
+<images/f1_score_knn_brut.png, id=61, 416.55624pt x 279.0425pt>
 File: images/f1_score_knn_brut.png Graphic file (type png)
 <use images/f1_score_knn_brut.png>
-Package pdftex.def Info: images/f1_score_knn_brut.png  used on input line 328.
+Package pdftex.def Info: images/f1_score_knn_brut.png  used on input line 293.
 (pdftex.def)             Requested size: 291.58737pt x 195.3284pt.
- [8 <./images/donnees_entree.png>]
-<images/riemann_cov_knn_f1Score.png, id=68, 386.44376pt x 252.945pt>
+<images/knn_tf_f1Score.png, id=62, 382.42876pt x 252.945pt>
+File: images/knn_tf_f1Score.png Graphic file (type png)
+<use images/knn_tf_f1Score.png>
+Package pdftex.def Info: images/knn_tf_f1Score.png  used on input line 305.
+(pdftex.def)             Requested size: 223.13649pt x 147.5882pt.
+<images/riemann_cov_knn_f1Score.png, id=63, 386.44376pt x 252.945pt>
 File: images/riemann_cov_knn_f1Score.png Graphic file (type png)
 <use images/riemann_cov_knn_f1Score.png>
 Package pdftex.def Info: images/riemann_cov_knn_f1Score.png  used on input line
- 340.
-(pdftex.def)             Requested size: 270.50877pt x 177.06029pt.
- [9 <./images/f1_score_knn_brut.png> <./images/riemann_cov_knn_f1Score.png>]
-<images/knn_passe_bas_f1Score.png, id=74, 382.42876pt x 252.945pt>
-File: images/knn_passe_bas_f1Score.png Graphic file (type png)
-<use images/knn_passe_bas_f1Score.png>
-Package pdftex.def Info: images/knn_passe_bas_f1Score.png  used on input line 3
-58.
-(pdftex.def)             Requested size: 267.69829pt x 177.06029pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 363--369
-
- []
-
-<images/knn_tf_f1Score.png, id=75, 382.42876pt x 252.945pt>
-File: images/knn_tf_f1Score.png Graphic file (type png)
-<use images/knn_tf_f1Score.png>
-Package pdftex.def Info: images/knn_tf_f1Score.png  used on input line 373.
-(pdftex.def)             Requested size: 267.69829pt x 177.06029pt.
-[10 <./images/knn_passe_bas_f1Score.png>]
-<images/riemann_cov_MDM_f1Score.png, id=80, 382.42876pt x 252.945pt>
+ 313.
+(pdftex.def)             Requested size: 223.13649pt x 146.05206pt.
+<images/riemann_cov_MDM_f1Score.png, id=64, 382.42876pt x 252.945pt>
 File: images/riemann_cov_MDM_f1Score.png Graphic file (type png)
 <use images/riemann_cov_MDM_f1Score.png>
 Package pdftex.def Info: images/riemann_cov_MDM_f1Score.png  used on input line
- 401.
-(pdftex.def)             Requested size: 267.69829pt x 177.06029pt.
- [11 <./images/knn_tf_f1Score.png>]
-<images/perceptron_passe_bas_f1Score.png, id=86, 389.455pt x 252.945pt>
-File: images/perceptron_passe_bas_f1Score.png Graphic file (type png)
-<use images/perceptron_passe_bas_f1Score.png>
-Package pdftex.def Info: images/perceptron_passe_bas_f1Score.png  used on input
- line 420.
-(pdftex.def)             Requested size: 272.61664pt x 177.06029pt.
-
-[12 <./images/riemann_cov_MDM_f1Score.png> <./images/perceptron_passe_bas_f1Sco
-re.png>]
-<images/perceptron_tf_f1Score.png, id=92, 382.42876pt x 252.945pt>
+ 321.
+(pdftex.def)             Requested size: 223.13649pt x 147.5882pt.
+<images/perceptron_tf_f1Score.png, id=65, 382.42876pt x 252.945pt>
 File: images/perceptron_tf_f1Score.png Graphic file (type png)
 <use images/perceptron_tf_f1Score.png>
-Package pdftex.def Info: images/perceptron_tf_f1Score.png  used on input line 4
-33.
-(pdftex.def)             Requested size: 267.69829pt x 177.06029pt.
+Package pdftex.def Info: images/perceptron_tf_f1Score.png  used on input line 3
+29.
+(pdftex.def)             Requested size: 223.13649pt x 147.5882pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 467--470
+Underfull \hbox (badness 10000) in paragraph at lines 340--341
 
  []
 
-[13 <./images/perceptron_tf_f1Score.png>]
-<images/visuel_classe_mean_std-1.png, id=97, 1201.48875pt x 877.2775pt>
+[9 <./images/f1_score_knn_brut.png>] [10 <./images/knn_tf_f1Score.png> <./image
+s/riemann_cov_knn_f1Score.png> <./images/riemann_cov_MDM_f1Score.png> <./images
+/perceptron_tf_f1Score.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 359--362
+
+ []
+
+<images/visuel_classe_mean_std-1.png, id=79, 1201.48875pt x 877.2775pt>
 File: images/visuel_classe_mean_std-1.png Graphic file (type png)
 <use images/visuel_classe_mean_std-1.png>
 Package pdftex.def Info: images/visuel_classe_mean_std-1.png  used on input lin
-e 474.
-(pdftex.def)             Requested size: 240.29349pt x 175.4524pt.
-<images/visuel_data_0-1.png, id=98, 1236.62pt x 877.2775pt>
+e 367.
+(pdftex.def)             Requested size: 223.13649pt x 162.92294pt.
+<images/visuel_data_0-1.png, id=80, 1236.62pt x 877.2775pt>
 File: images/visuel_data_0-1.png Graphic file (type png)
 <use images/visuel_data_0-1.png>
-Package pdftex.def Info: images/visuel_data_0-1.png  used on input line 481.
-(pdftex.def)             Requested size: 247.31961pt x 175.4524pt.
- [14 <./images/visuel_classe_mean_std-1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 486--504
+Package pdftex.def Info: images/visuel_data_0-1.png  used on input line 375.
+(pdftex.def)             Requested size: 223.13649pt x 158.29134pt.
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 387.
+
+
+Overfull \hbox (9.16293pt too wide) in paragraph at lines 388--402
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--405
 
  []
 
-[15 <./images/visuel_data_0-1.png>] (./rendu_PLDAC.bbl) [16] (./rendu_PLDAC.aux
-) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 408--409
+
+ []
+
+[11] [12 <./images/visuel_classe_mean_std-1.png> <./images/visuel_data_0-1.png>
+]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 426.
+
+[13] (./rendu_PLDAC.bbl) [14] (./rendu_PLDAC.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 35502 strings out of 494880
- 789583 string characters out of 6179601
- 818640 words of memory out of 5000000
- 38383 multiletter control sequences out of 15000+600000
- 539769 words of font info for 59 fonts, out of 8000000 for 9000
+ 36629 strings out of 494880
+ 809592 string characters out of 6179601
+ 832040 words of memory out of 5000000
+ 39498 multiletter control sequences out of 15000+600000
+ 544480 words of font info for 76 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  123i,11n,153p,10390b,1891s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
-Output written on rendu_PLDAC.pdf (18 pages, 549812 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/euler/eufm10.pfb>
+Output written on rendu_PLDAC.pdf (17 pages, 534376 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 84 compressed objects within 1 object stream
+ 149 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 103 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 63 words of extra memory for PDF output out of 10000 (max. 10000000)
 
