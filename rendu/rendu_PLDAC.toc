@@ -1,27 +1,28 @@
+\babel@toc {french}{}
 \contentsline {part}{I\hspace {1em}Introduction}{1}
 \contentsline {part}{II\hspace {1em}\IeC {\'E}tat de l'art - la g\IeC {\'e}ometrie de riemann}{2}
 \contentsline {section}{\numberline {1}Distance}{2}
-\contentsline {section}{\numberline {2}Moyenne g\IeC {\'e}ometrique}{2}
+\contentsline {section}{\numberline {2}Moyenne g\IeC {\'e}om\IeC {\'e}trique}{2}
 \contentsline {section}{\numberline {3}Espace tangent}{3}
 \contentsline {part}{III\hspace {1em}Les diff\IeC {\'e}rents mod\IeC {\`e}les}{3}
 \contentsline {section}{\numberline {1}Arbre des mod\IeC {\`e}les}{3}
 \contentsline {section}{\numberline {2}Format des donn\IeC {\'e}es}{4}
-\contentsline {section}{\numberline {3}Description des mod\IeC {\`e}les}{5}
-\contentsline {subsection}{\numberline {3.1}1 et 2 - SVM et KNN avec une transformer de fourrier}{5}
+\contentsline {section}{\numberline {3}Description des mod\IeC {\`e}les}{4}
+\contentsline {subsection}{\numberline {3.1}1 et 2 - SVM et KNN avec une transform\IeC {\'e}e de Fourier}{4}
 \contentsline {subsection}{\numberline {3.2}3,4 et 5 - SVM,MDM et KNN avec matrice de covariance }{5}
-\contentsline {subsection}{\numberline {3.3}6 et 7 - SVM et KNN sur les donn\IeC {\'e}es brut}{5}
+\contentsline {subsection}{\numberline {3.3}6 et 7 - SVM et KNN sur les donn\IeC {\'e}es brutes}{5}
 \contentsline {subsection}{\numberline {3.4}8 et 9 - SVM et KNN avec un filtre passe bas}{5}
-\contentsline {subsection}{\numberline {3.5}8 - Chaine de traitement riemannienne}{5}
+\contentsline {subsection}{\numberline {3.5}8 - Cha\IeC {\^\i }ne de traitement riemannienne}{5}
 \contentsline {part}{IV\hspace {1em}Experimentations}{7}
-\contentsline {section}{\numberline {1}Prise en main sur un dataset simple}{8}
-\contentsline {subsection}{\numberline {1.1}Decription du dataset eye close/eye open}{8}
-\contentsline {subsection}{\numberline {1.2}R\IeC {\'e}sultat des diff\IeC {\'e}rents algorithmes}{9}
-\contentsline {subsubsection}{\numberline {1.2.1}Valeurs de k pour KNN}{9}
-\contentsline {subsubsection}{\numberline {1.2.2}\IeC {\'E}tudes sur la longueur de la fen\IeC {\^e}tre optimale}{9}
-\contentsline {subsubsection}{\numberline {1.2.3}Tableau r\IeC {\'e}capiltulatif}{11}
-\contentsline {section}{\numberline {2}Brain Invader}{11}
-\contentsline {subsection}{\numberline {2.1}Description de la tache de machine learning}{11}
-\contentsline {section}{\numberline {3}DecMeg2014}{13}
-\contentsline {subsection}{\numberline {3.1}Description du dataset}{13}
-\contentsline {subsection}{\numberline {3.2}M\IeC {\'e}thode d'\IeC {\'e}valuation}{13}
-\contentsline {part}{V\hspace {1em}Conclusion}{14}
+\contentsline {section}{\numberline {1}Description des diff\IeC {\'e}rents dataset}{8}
+\contentsline {subsection}{\numberline {1.1}Description du dataset eye close/eye open}{8}
+\contentsline {subsection}{\numberline {1.2}Description du dataset brain invader}{9}
+\contentsline {subsection}{\numberline {1.3}Description du dataset DecMeg2014}{10}
+\contentsline {section}{\numberline {2}\IeC {\'E}tude sur les valeurs de k pour les diff\IeC {\'e}rents KNN}{11}
+\contentsline {section}{\numberline {3}\IeC {\'E}tude sur la longueur de la fen\IeC {\^e}tre optimale}{11}
+\contentsline {section}{\numberline {4}Comparaison des diff\IeC {\'e}rentes m\IeC {\'e}thodes}{12}
+\contentsline {subsection}{\numberline {4.1}Tableau r\IeC {\'e}capitulatif eye close/open}{12}
+\contentsline {subsection}{\numberline {4.2}Brain Invader}{14}
+\contentsline {subsection}{\numberline {4.3}DecMeg2014}{14}
+\contentsline {paragraph}{M\IeC {\'e}thodes d'\IeC {\'e}valuation}{14}
+\contentsline {part}{V\hspace {1em}Conclusion}{15}

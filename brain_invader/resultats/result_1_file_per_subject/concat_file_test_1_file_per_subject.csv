@@ -7,3 +7,4 @@ nom du fichier,1 seconde,"0,1 seconde","0,04 seconde",moyenne
 "resultats/resultat_perceptron_tf_test_1_file_per_subject,csv","0,125","0,125","0,181818181818182","0,143939393939394"
 "resultats/resultat_passe_bas_perceptron_test_1_file_per_subject,csv","0,214285714285714","0,214285714285714","0,235294117647059","0,221288515406162"
 "resultats/resultat_riemann_MDM_test_1_file_per_subject,csv","0,269889224572004","0,256206554121152","0,249661705006766","0,258585827899974"
+moyenne,"0,110471273359342","0,129847461108181","0,159216308131781","0,133178347533101"
