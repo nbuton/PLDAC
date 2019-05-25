@@ -97,17 +97,18 @@
 \newpage
 \pagenumbering{arabic}
 \part{Introduction}
-Les signaux étudiés seront des signaux d'Électroencéphalographie(EEG) et de Magnétoencéphalographie(MEG). Le premier consiste à enregistrer les signaux électriques à la surface du crane grâce a des électrodes, le second enregistre l'activité magnétique induite par l'activité des neurones grâce a un ensemble de magnétomètre. Notre étude ce place dans le cadre de l'analyse de série temporelle multivariée. On retrouve ces séries dans plusieurs domaines comme en finance, géophysique et dans notre cas dans les BCI(Brain Computer Interface). Chaque variable possède une dimension temporelle et de plus chaque variable est liée spatialement aux autres.\\
+Les signaux étudiés seront des signaux d'Électroencéphalographie(EEG) et de Magnétoencéphalographie(MEG). Le premier consiste à enregistrer les signaux électriques à la surface du crane grâce a des électrodes, le second enregistre l'activité magnétique induite par l'activité des neurones grâce a un ensemble de magnétomètres. Notre étude ce place dans le cadre de l'analyse de série temporelle multivariée. On retrouve ces séries dans plusieurs domaines comme en finance, géophysique et dans notre cas dans les BCI (Brain Computer Interface). Chaque variable possède une dimension temporelle et de plus chaque variable est liée spatialement aux autres.\\
 
-Une des premières difficultés des interfaces cerveaux machines c'est qu'elles ont besoin de réagir vite cela implique que l'on doit analyser le signal sur un laps de temps court, ce qui nous donne peu de données pour voir les liens entre les différentes variables. Le fait que les électrodes ne sont jamais situées exactement au même endroit sur le crane entre chaque essai, et entre chaque personne rajoute une autre difficulté. De plus il peut y avoir beaucoup de bruit générés par le matériel et les mouvements de l'utilisateur par exemple.\\
+Une des premières difficultés des interfaces cerveaux machines c'est qu'elles ont besoin de réagir vite cela implique que l'on doit analyser le signal sur un laps de temps court, ce qui nous donne peu de données pour voir les liens entre les différentes variables. Le fait que les électrodes ne sont jamais situées exactement au même endroit sur le crane entre chaque essai et entre chaque personne rajoute une autre difficulté. De plus il peut y avoir beaucoup de bruits générés par le matériel et les mouvements de l'utilisateur par exemple.\\
 
-Historiquement la classification sur de tels signaux se faisait avec des méthodes linéaires, par exemple avec des SVM ou des régressions logistiques. Cela avait des performances assez faible et il fallait donc répéter l’expérience plusieurs fois. Par la suite Alexandre Barachant a proposé d'utiliser les méthodes riemanniennes, celles-ci permettent de prendre en compte la spatialité des données et sont plus robustes. Cette robustesse vient du fait que la géométrie de Riemann permet de manipuler des matrices de covariance, car on peut définir une distance entre matrices symétriques définies positives, et les matrices de covariance font partie de ce groupe. Ces méthodes ont permit d'attaquer des taches plus compliqué comme le transfert entre participants. On entraîne notre modèle en utilisant un participant pour faire ensuite des prédiction sur un autre participant.\\
+Historiquement la classification sur de tels signaux se faisait avec des méthodes linéaires, par exemple avec des SVM ou des régressions logistiques \cite{garcia_support_2003}. Cela avait des performances assez faible et il fallait donc répéter l’expérience plusieurs fois. Par la suite Alexandre Barachant a proposé d'utiliser les méthodes riemanniennes \cite{congedo_riemannian_2017}, celles-ci permettent de prendre en compte la spatialité des données et sont plus robustes. Cette robustesse vient du fait que la géométrie de Riemann permet de manipuler des matrices de covariance. On peut définir une distance entre matrices symétriques définies positives et les matrices de covariance font partie de ce groupe. Ces méthodes ont permis d'attaquer des taches plus compliqués comme le transfert entre participants. On entraîne notre modèle en utilisant un participant pour faire ensuite des prédictions sur un autre participant.\\
 
-C'est pour cela qu'aujourd'hui dans les méthodes de l’état de l'art on utilise encore la géométrie riemannienne. Par la suite nous allons comparer ces méthodes avec de la géométrie riemannienne avec d'autres méthodes plus classiques mais par forcément toutes explorées, ainsi qu'une méthode de deep learning(un réseaux convolutionel). Nous essayerons plusieurs combinaisons avec des méthodes d’analyses de signal comme la transformée de Fourier, des filtres et aussi d'autre façon de traiter les matrices de covariance avec des modèles comme des SVM ou KNN. Par ailleurs nous étudierons aussi l'effet de la taille de la fenêtre.\\
+C'est pour cela qu'aujourd'hui dans les méthodes de l’état de l'art on utilise encore la géométrie riemannienne. Par la suite nous allons comparer ces méthodes avec de la géométrie riemannienne avec d'autres méthodes plus classiques, ainsi qu'une méthode de deep learning (un réseaux convolutionel). Nous essayerons plusieurs combinaisons avec des méthodes issues du traitement du signal comme la transformée de Fourier, des filtres et aussi d'autre façon de traiter les matrices de covariance avec des modèles comme des SVM ou KNN. Par ailleurs nous étudierons aussi l'effet de la taille de la fenêtre.\\
 
 On pourra voir que pour des cas simples comme l'ouverture et la fermeture des yeux qui possèdent un signal très fort sur un EEG on a déjà de très bon résultats avec des méthodes simples, F1-score de 0.77 sur la classe minoritaire avec une transformée de Fourier puis un SVM avec une taille de fenêtre adaptée (plus de détails dans la partie expérimentation), et avec un "Minimum distance to Mean" et de la géométrie riemannienne on obtient un F1-score de 0.84.\\
 
-\part{État de l'art - la géometrie de riemann}
+\part{État de l'art - la géométrie de Riemann}
+Nous avons besoins de métrique dans des espaces de Riemann pour pouvoir comparer les matrices entre elles. Cela nous permet de transposer des algorithmes comme les plus proches voisins ou les MDM, ou l'on définit un centre par classe et on regarde de quel centre est plus proche la nouvelle données. Et nous avons aussi besoin d'un façon de vectorisé cette matrice et c'est a cela que sert l'espace tangent.
 \section{Distance}
 Les matrices de covariance sont des matrices symétriques et définies positives.
 Pour deux matrices $\mathbf{\Sigma}_1$ et $\mathbf{\Sigma}_2$ leurs distances est d’après la géométrie de Riemann est déterminé par la formule suivante :\\
@@ -134,7 +135,7 @@ Pour définir la matrice moyenne nous ne possédons pas d'expression explicite. 
 \end{equation}
 
 \section{Espace tangent}
-On peut projeter un point de l'espace de Riemann définit par une matrice NxN sur un espace tangent avec N(N+1)/2 dimensions. Cet espace tangent est un espace euclidien. On peut approximer des distances de l'espace de Riemann par des distances dans l'espace tangent et cela fonctionne assez bien localement.
+On peut projeter un point de l'espace de Riemann définit par une matrice NxN sur un espace tangent avec N(N+1)/2 dimensions. Cet espace tangent est un espace euclidien. On peut approximer des distances de l'espace de Riemann par des distances dans l'espace tangent et cela fonctionne assez bien localement. Il a été montré que le point que l'on choisis pour définir notre espace tangent importe peu.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.5]{images/Riemann_tangent_space.png}
@@ -142,7 +143,7 @@ On peut projeter un point de l'espace de Riemann définit par une matrice NxN su
 \caption{Affichage de l'espace tangent}
 \end{figure}
 Pour plus de détails sur la géometrie de riemann il y a cet article d'A. Barachant \cite{congedo_riemannian_2017}.
-\part{Les différents modèles}
+\part{Plan d'expérience}
 \section{Arbre des modèles}
 Nous allons représenter à l'aide d'un arbre les différentes méthodes que nous allons tester par la suite.
 \begin{center}
@@ -181,15 +182,15 @@ Notons :\\
 C : le nombre de canaux.\\
 T : le temps écoulé en seconde pendant l'enregistrement des données.\\
 f : la fréquence d’échantillonnage du signal.\\
-TT : le temps d'un trial.\\
-NT : le nombre de trial.\\
+TT : durée d'un trial.\\
+$N_{T}$ : le nombre de trial.\\
 Nous disposons donc d'une matrice de taille Cx(T*f), ainsi que d'un vecteur de label de taille (T*f).\\
 \\
 Mais un deuxième format d'entré est possible, en découpant par trial, a chaque trial correspond un label. Nous disposons donc d'un tenseur de taille (TT*f)xCxNT, et d'un vecteur de label de taille NT.\\
-On peut passer du premier formalisme a l'autre en découpant par trial(en définissant une taille de fenêtre) mais nous avons plusieurs possibilités pour savoir quel label associé à ce trial (label majoritaire,premier label,dernier label,etc...).\\
+On peut passer du premier formalisme a l'autre en découpant par trial (en définissant une taille de fenêtre) mais nous avons plusieurs possibilités pour savoir quel label associé à ce trial (label majoritaire,premier label,dernier label,etc...).\\
 \section{Description des modèles}
 \subsection{1 et 2 - SVM et KNN avec une transformée de Fourier}
-La première étape de notre modèle est d'effectuer une transformée de Fourier, c'est a dire passer d'un signal temporel à un signal fréquentiel. Pour calculer nous utiliserons l'algorithme FFT(Fast Fourier transform). Nous garderons uniquement le module pour rester avec des valeurs réelles plutôt que complexes. Ensuite nous utilisons un SVM pour prédire les labels dans un cas et un KNN dans l'autre.
+La première étape de notre modèle est d'effectuer une transformée de Fourier, c'est a dire passer d'un signal temporel à un signal fréquentiel. Pour calculer nous utiliserons l'algorithme FFT (Fast Fourier transform). Nous garderons uniquement le module pour rester avec des valeurs réelles plutôt que complexes. Ensuite nous utilisons un SVM pour prédire les labels dans un cas et un KNN dans l'autre.
 \subsection{3,4 et 5 - SVM,MDM et KNN avec matrice de covariance }
 Pour cette approche nous devons passer au deuxième format de données (décrit dans la partie précédente), si les données sont dans le premier format nous devons définir une taille de fenêtre et une méthode d'attribution des labels. Ensuite on calcule la matrice de covariance grâce a numpy.
 \subsection{6 et 7 - SVM et KNN sur les données brutes}
@@ -258,7 +259,7 @@ On commence par visualiser le signal des 16 électrodes ainsi que leurs labels a
 \end{figure}
 
 \subsection{Description du dataset brain invader}
-Il y a 24 participants qui ont participé à l’expérience (12 femmes), avec une moyenne d'age (écart type) de 25.96(4.46). Les 12 éléctrodes en vert sur l'image ci-dessous etait utilisé.
+Il y a 24 participants qui ont participé à l’éxperience (12 femmes), avec une moyenne d'age (écart type) de 25.96 (4.46). Les 12 électrodes en vert sur l'image ci-dessous était utilisé.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.4]{images/situation_capteur.png}
