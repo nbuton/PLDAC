@@ -182,26 +182,28 @@ Notons :\\
 C : le nombre de canaux.\\
 T : le temps écoulé en seconde pendant l'enregistrement des données.\\
 f : la fréquence d’échantillonnage du signal.\\
-TT : durée d'un trial.\\
+$D_{E}$ : durée d'un essai.\\
 $N_{T}$ : le nombre de trial.\\
-Nous disposons donc d'une matrice de taille Cx(T*f), ainsi que d'un vecteur de label de taille (T*f).\\
+Nous disposons donc d'une matrice de taille $C*(T*f)$, ainsi que d'un vecteur de label de taille $(T*f)$.\\
 \\
-Mais un deuxième format d'entré est possible, en découpant par trial, a chaque trial correspond un label. Nous disposons donc d'un tenseur de taille (TT*f)xCxNT, et d'un vecteur de label de taille NT.\\
+Mais un deuxième format d'entré est possible, en découpant par trial, a chaque trial correspond un label. Nous disposons donc d'un tenseur de taille $(D_{E}*f)*C*N_{T}$, et d'un vecteur de label de taille $N_{T}$.\\
 On peut passer du premier formalisme a l'autre en découpant par trial (en définissant une taille de fenêtre) mais nous avons plusieurs possibilités pour savoir quel label associé à ce trial (label majoritaire,premier label,dernier label,etc...).\\
 \section{Description des modèles}
-\subsection{1 et 2 - SVM et KNN avec une transformée de Fourier}
-La première étape de notre modèle est d'effectuer une transformée de Fourier, c'est a dire passer d'un signal temporel à un signal fréquentiel. Pour calculer nous utiliserons l'algorithme FFT (Fast Fourier transform). Nous garderons uniquement le module pour rester avec des valeurs réelles plutôt que complexes. Ensuite nous utilisons un SVM pour prédire les labels dans un cas et un KNN dans l'autre.
-\subsection{3,4 et 5 - SVM,MDM et KNN avec matrice de covariance }
-Pour cette approche nous devons passer au deuxième format de données (décrit dans la partie précédente), si les données sont dans le premier format nous devons définir une taille de fenêtre et une méthode d'attribution des labels. Ensuite on calcule la matrice de covariance grâce a numpy.
-\subsection{6 et 7 - SVM et KNN sur les données brutes}
+Une donnée correspond à un essai. On le note $x\in \mathbb{R}^{C*D_{E}}$. Si les signaux sont présentés en continu il faut les découper en choisissant une taille de fenêtre pour les analysés.
+\paragraph{1 et 2 - SVM et KNN avec une transformée de Fourier}\mbox{}\\
+La première étape de notre modèle est d'effectuer une transformée de Fourier, c'est a dire passer d'un signal temporel à un signal fréquentiel. Pour calculer cette transformation nous utiliserons l'algorithme FFT (Fast Fourier transform). Nous garderons uniquement le module pour rester avec des valeurs réelles plutôt que complexes. Ensuite nous utilisons un SVM linéaire pour prédire les labels dans un cas et un KNN euclidien dans l'autre. Les données apres pré-traitement $x_{fft}\in \mathbb{R}^{C*\left\lfloor\dfrac{D_{E}}{2}\right\rfloor}$
+\paragraph{3,4 et 5 - SVM,MDM et KNN avec matrice de covariance }
+\mbox{}\\
+Pour cette approche nous devons passer au deuxième format de données. On calcule la matrice de covariance.$\Sigma=x^T*x\in \mathbb{R}^{C*C}$. Ces représentation sont reconnues très efficaces dans l'approche Riemannien. Nous allons vérifier ce que ça donne avec des approches plus classiques.
+\paragraph{6 et 7 - SVM et KNN sur les données brutes}\mbox{}\\
 Cette approche est la plus simple et on utilise simplement un vecteur de la taille le nombre de capteur, c'est à dire un relevé a un instant t des capteurs pour prédire un labels.
-\subsection{8 et 9 - SVM et KNN avec un filtre passe bas}
+\paragraph{8 et 9 - SVM et KNN avec un filtre passe bas}\mbox{}\\
 Nous définissons un filtre passe bas avec la moyenne sur un fenêtre glissante. Donc nous avons deux paramètres le premier est la longueur de la fenêtre, sur combien on moyenne et le deuxième est le décalage de cette fenêtre. On peut mettre la longueur de la fenêtre égale au décalage si on ne veux pas de chevauchement.
-\subsection{8 - Chaîne de traitement riemannienne}
+\paragraph{8 - Chaîne de traitement riemannienne}\mbox{}\\
 Par la suite je vais décrire la chaîne de traitement étape par étape. Cette chaîne de traitement est spécifique au dataset DecMeg2014.\\
 1 - On garde uniquement 1 seconde sur les 1.5 seconde de signal car le stimulus intervient qu’après 0.5 seconde. \\
 2 - On filtre le signal avec un filtre passe bande de Butterworth d'ordre 5 entre 1Hz et 20Hz.\\
-3 - Par la suite on effectue un filtrage spatial, on extrait Cvirt canaux virtuels par classe et K le nombre de classes. On commence par définir la moyenne sur chaque classe :
+3 - Par la suite on effectue un filtrage spatial, on extrait $C_{virt}$ canaux virtuels par classe et K le nombre de classes \cite{Blankertz 01 ou 03}. On commence par définir la moyenne sur chaque classe :
 $$ \mbox{\Large $ 
 \mathbf{P}^{(k)}=\frac{1}{ | \mathcal{I}^{(k) |}} \sum_{i \in \mathcal{I}^{(k)}} \mathbf{X}_{i_{1}}
 $ } $$
@@ -276,7 +278,7 @@ Deuxième tache : Il nous faut trouver les deux flashs comprenant l'alien ciblé
 Plusieurs dataset utilisent ce paradigme de P300. On présente un stimulus a un participant et environ 300 ms après on peut détecter une activité cérébrale. En le répétant plusieurs fois cela permet a l'utilisateur de faire un choix par la pensée.\\
 
 
-Figure 4 : Par la suite on peut voir sur l'image de droite le potentiel de l’électrode numéro 3 selon la classe au cours du temps. Et pour se rendre un peu mieux compte de la difficulté de la tâche on peut voir sur le graphique de gauche la moyenne sur tous les trials avec l’écart type, on peut différencier les deux classes mais l’écart entre les moyennes est très petit en comparaison des grandes valeurs des écarts types. Les graphiques sur les autres électrodes montrent tous à peu prêt la même chose ou parfois même encore moins d’écart de moyenne entre les deux classes.
+Figure 4 : Par la suite on peut voir sur l'image de droite le potentiel de l’électrode numéro 3 selon la classe au cours du temps. Et pour se rendre un peu mieux compte de la difficulté de la tâche on peut voir sur le graphique de gauche la moyenne sur tous les essais avec l’écart type, on peut différencier les deux classes mais l’écart entre les moyennes est très petit en comparaison des grandes valeurs des écarts types. Les graphiques sur les autres électrodes montrent tous à peu prêt la même chose ou parfois même encore moins d’écart de moyenne entre les deux classes.
 \begin{figure*}[]
         \centering
         \begin{subfigure}[b]{0.475\textwidth}
@@ -304,7 +306,7 @@ La tâche que l'on doit réaliser avec le dataset DecMeg2014 est une classificat
 \\
 Ce dataset est extrait d'une compétition kaggle du même nom.
 \\
-Il y a eu 23 participants à ce test avec environ 580 trials par participant. Nous disposons de 16 participants avec leurs labels associé et 7 participants où nous avons uniquement les données.
+Il y a eu 23 participants à ce test avec environ 580 essais par participant. Nous disposons de 16 participants avec leurs labels associé et 7 participants où nous avons uniquement les données.
 
 
 \section{Étude sur les valeurs de k pour les différents KNN}
