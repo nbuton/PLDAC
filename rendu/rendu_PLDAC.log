@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.20)  26 MAY 2019 16:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.20)  26 MAY 2019 19:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1529,14 +1529,6 @@ t de donn^^Sees. On cal-cule la ma-trice de covariance.$^^F =
  []
 
 [5] [6]
-
-Package caption Warning: \label without proper reference on input line 245.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig2' on page 7 undefined on input line 242.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 237--256
 
  []
@@ -1667,16 +1659,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 448--458
 
 [15] (./rendu_PLDAC.bbl [16]) [17] (./rendu_PLDAC.aux)
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  37852 strings out of 492982
  827709 string characters out of 6134896
- 863393 words of memory out of 5000000
+ 864393 words of memory out of 5000000
  40939 multiletter control sequences out of 15000+600000
  543688 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1701,7 +1690,7 @@ ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msbm10.pfb>
-Output written on rendu_PLDAC.pdf (20 pages, 1176210 bytes).
+Output written on rendu_PLDAC.pdf (20 pages, 1175958 bytes).
 PDF statistics:
  182 PDF objects out of 1000 (max. 8388607)
  113 compressed objects within 2 object streams
