@@ -463,16 +463,16 @@ Pour chaque test on sauvegardera le F1-score moyen sur les deux classes.
 Nom de l’algorithme & Méthode 1         & Méthode 2           & Méthode 3          & Méthode 4          \\
 \hline
 CTR                 & 0,717 & 0.445 & 0.673 & 0.693 \\
-conv1D              & 0,133         & 0.04                & 0.09               & 0.33               \\
-passe bas SVM       & 0.33                & 0.33                   & 0.33                  & 0.33                  \\
-riemann MDM         & 0,5524            & 0.12                & 0.43               & 0.535               \\
-SVM brut            & 0.165                 & 0.33                   & 0.33                  & 0.33                  \\
-SVM TF              & 0.33                 & 0.33                   & 0.33                  & 0.33      \\
+conv1D              & 0,133         & - & 0.09               & 0.33               \\
+passe bas SVM       & 0.33                & - & 0.33                  & 0.33                  \\
+riemann MDM         & 0,5524            & -                & 0.43               & 0.535               \\
+SVM brut            & 0.165                 & - & 0.33                  & 0.33                  \\
+SVM TF              & 0.33                 & - & 0.33                  & 0.33      \\
 \hline           
 \end{tabular}
 \end{center}
 \end{table}
-On a beaucoup de 0.33, cela correspond au fait que le modèle prédit toujours la même classe.\\
+On a beaucoup de 0.33, cela correspond au fait que le modèle prédit toujours la même classe. \\
 Grace à la méthode 3 on peut voir que les méthodes de Riemann sont les méthodes qui fonctionne le mieux pour le transfert et avec une marge significative. De plus cela montre la robustesse des méthodes de Riemann qui même avec un casque à électrodes placé différemment et un niveau de bruit élevé l'algorithme peut faire de bonne prédiction sur un nouveau participant.
 \part{Conclusion}
 D'après nos résultat nous pouvons conclure que d'une part les prétraitement sur le signal sont très important et que pour le moment avec des méthodes classiques de deep learning on n'arrive pas à faire mieux qu'avec des méthodes riemanniennes. Il pourrait être intéressant de combiner des méthodes de deep learning et de géométrie de Riemann.
