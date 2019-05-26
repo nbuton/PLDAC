@@ -109,9 +109,25 @@ On pourra voir que pour des cas simples comme l'ouverture et la fermeture des ye
 
 \part{État de l'art - la géométrie de Riemann}
 Nous avons besoins de métrique dans des espaces de Riemann pour pouvoir comparer les matrices entre elles. Cela nous permet de transposer des algorithmes comme les plus proches voisins ou les MDM, ou l'on définit un centre par classe et on regarde de quel centre est plus proche la nouvelle données. Et nous avons aussi besoin d'un façon de vectorisé cette matrice et c'est a cela que sert l'espace tangent.
-\section{Distance}
-Les matrices de covariance sont des matrices symétriques et définies positives.
-Pour deux matrices $\mathbf{\Sigma}_1$ et $\mathbf{\Sigma}_2$ leurs distances est d’après la géométrie de Riemann est déterminé par la formule suivante :\\
+
+
+\section{Espace tangent}
+Pour avoir un variété riemannien il nous faut un espace tangent. Et pour avoir un espace tangent il nous faut une distance locale. De plus on sait que l'espace des paramètre des gaussiennes multivariées possèdent un produit scalaire local(obtenu par différentiation), donc une distance locale. Un des paramètre de cette gaussienne étant une matrice de covariance, cela nous définit donc une variété riemannienne sur les matrices SDP(symétriques définies positives). Car une matrice SDP quelconque  peut être vu comme une matrice de covariance.
+
+L'espace tangent est un espace euclidien. On peut approximer des distances de l'espace de Riemann par des distances dans l'espace tangent et cela fonctionne assez bien localement. On peut projeter un point de l'espace de Riemann définit par une matrice $N*N$ sur un espace tangent avec $N(N+1)/2$ dimensions. Pour cela il faut choisir un point pour définir notre espace tangent. Autour de ce point on aura une très bonne estimation de la distance et plus on s'en éloigne et plus l'estimation sera mauvaise. Mais il a été remarqué qu’expérimentalement pour de la classification le point que l'on choisi change peu le résultat. C'est pour cela que par la suite nous prendrons l'identité(qui est une matrice SDP) comme point pour définir notre espace tangent.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.5]{images/Riemann_tangent_space.png}
+\end{center}
+\caption{Affichage de l'espace tangent}
+\end{figure}
+
+
+\section{Distance globale}
+La distance géodésique est la longueur du plus court chemin entre deux point sur la variété. On peut calculer cette distance par morceau en faisant des petit pas et avec la distance locale, mais de la cas générale on n'a pas de formule. Par contre dans le cas des matrices symétriques et définies positives on a la formule qui est la suivante :
+
+Soit deux matrices $\mathbf{\Sigma}_1$ et $\mathbf{\Sigma}_2$ symétriques et définies positives.
 \begin{equation}
 \label{eq:Rgeodistance}
 \delta_R(\mathbf{\Sigma}_1,\mathbf{\Sigma}_2) 
@@ -124,24 +140,16 @@ où $\lambda_c, c=1\ldots C$ sont les valeurs propres réelles de $\mathbf{\Sigm
 \\
 F : Norme de Frobenius
 
-\section{Moyenne géométrique}
-Pour définir la matrice moyenne nous ne possédons pas d'expression explicite. Nous définissons donc une matrice $\mathbf{\Sigma}_i$, matrice moyenne que nous initialisons aléatoirement et ensuite on procède par descente de gradient en utilisant la formule suivante : 
-
+\section{Barycentre riemannien}
+La définition du barycentre est :
 \begin{equation}
 \mathfrak{G} \left( \mathbf{\Sigma}_1,\ldots,\mathbf{\Sigma}_I \right) = \argmin_{\mathbf{\Sigma}} 
 \sum_{i=1}^{I} 
 \delta_R^2 \left( \mathbf{\Sigma},\mathbf{\Sigma}_i \right).
 \label{eq:geo_mean}
 \end{equation}
-
-\section{Espace tangent}
-On peut projeter un point de l'espace de Riemann définit par une matrice NxN sur un espace tangent avec N(N+1)/2 dimensions. Cet espace tangent est un espace euclidien. On peut approximer des distances de l'espace de Riemann par des distances dans l'espace tangent et cela fonctionne assez bien localement. Il a été montré que le point que l'on choisis pour définir notre espace tangent importe peu.
-\begin{figure}[H]
-\begin{center}
-\includegraphics[scale=0.5]{images/Riemann_tangent_space.png}
-\end{center}
-\caption{Affichage de l'espace tangent}
-\end{figure}
+Malheureusement contrairement au cas euclidien ce n'est pas la même formule que la moyenne arithmétique. Et même restreins aux matrices SDP nous ne possédons pas d'expression explicite. Nous devons donc utiliser un algorithme itératif. Nous définissons donc une matrice $\mathbf{\Sigma}_i$, matrice moyenne que nous initialisons aléatoirement et ensuite on procède par descente de gradient pour approximer le barycentre.\\
+\\
 Pour plus de détails sur la géometrie de riemann il y a cet article d'A. Barachant \cite{congedo_riemannian_2017}.
 \part{Plan d'expérience}
 \section{Arbre des modèles}
@@ -203,7 +211,7 @@ Nous définissons un filtre passe bas avec la moyenne sur un fenêtre glissante.
 Par la suite je vais décrire la chaîne de traitement étape par étape. Cette chaîne de traitement est spécifique au dataset DecMeg2014.\\
 1 - On garde uniquement 1 seconde sur les 1.5 seconde de signal car le stimulus intervient qu’après 0.5 seconde. \\
 2 - On filtre le signal avec un filtre passe bande de Butterworth d'ordre 5 entre 1Hz et 20Hz.\\
-3 - Par la suite on effectue un filtrage spatial, on extrait $C_{virt}$ canaux virtuels par classe et K le nombre de classes \cite{Blankertz 01 ou 03}. On commence par définir la moyenne sur chaque classe :
+3 - Par la suite on effectue un filtrage spatial, on extrait $C_{virt}$ canaux virtuels par classe et K le nombre de classes \cite{rivet_xdawn_2009}. On commence par définir la moyenne sur chaque classe :
 $$ \mbox{\Large $ 
 \mathbf{P}^{(k)}=\frac{1}{ | \mathcal{I}^{(k) |}} \sum_{i \in \mathcal{I}^{(k)}} \mathbf{X}_{i_{1}}
 $ } $$
@@ -216,9 +224,9 @@ $$ \mbox{\Large $
 \mathbf{Z}_{i}=\mathbf{W}^{T} \mathbf{X}_{i}
 $ } $$
 4 - On définit une nouvelle entrée comme étant la concaténation :\\
-- du signal moyen de la classe 1 auquel on multiplie par W0 pour les projeter sur les canaux virtuels appris précédemment.\\
+- du signal moyen de la classe 1 auquel on multiplie par $W_{0}$ pour les projeter sur les canaux virtuels appris précédemment.\\
 - idem pour la classe 2\\
-- Et ensuite le signal Xi projeté sur les 8 canaux, qui est Zi.\\
+- Et ensuite le signal $X_{i}$ projeté sur les 8 canaux, qui est $Z_{i}$.\\
 Cela nous permet de définir de nouvelles caractéristiques, donc a chaque Xi d'entrée sur C canaux on le projette sur Cvirt canaux.
 $$ \mbox{\Large $ 
 \tilde{\boldsymbol{Z}}_{i}=\left[ \begin{array}{c}{\mathbf{W}^{(0)^{T}} \mathbf{P}^{(0)}} \\ {\mathbf{W}^{(1)^{T}} \mathbf{P}^{(1)}} \\ {\mathbf{Z}_{i}}\end{array}\right]
@@ -231,8 +239,10 @@ $ } $$
 7 - On estime pour les 15 autres participants avec ce filtre spatial\\
 8 - On fait la même chose pour les 15 autres participants et on concatène.\\
 9 - On fait une régression logistique avec une régularisation lasso.\\
-La figure suivante représente la forme des matrices au fur et à mesure du processus. Les tailles des matrices correspondent aux tailles dans le dataset DecMeg2014. Elles sont à lire de gauche à droite et de haut en bas.
+La figure suivante \ref{fig2} représente la forme des matrices au fur et à mesure du processus. Les tailles des matrices correspondent aux tailles dans le dataset DecMeg2014. Elles sont à lire de gauche à droite et de haut en bas.
 \\
+\begin{figure}[H]
+\label{fig2}
 \begin{tikzpicture}
   \pic at (0,10) {annotated cuboid={width=375, height=306, depth=580, scale=.01, units=}};
   \pic at (5,10) {annotated cuboid={width=250, height=306, depth=580, scale=.01, units=}};
@@ -242,17 +252,18 @@ La figure suivante représente la forme des matrices au fur et à mesure du proc
    \pic at (3,4) {annotated cuboid={width=136, height=1, depth=9414, scale=.001, units=}};
    \pic at (-4,-1) {annotated cuboid={width=2176, height=1, depth=9414, scale=.001, units=}};
 \end{tikzpicture}
-
+\caption{Représentation des matrices au fur et à mesure des différentes étapes}
+\end{figure}
 
 \part{Experimentations}
 Nous allons étudier nos méthodes sur 3 datasets différents : Eye close/eye open, brain invader et DecMeg2014. Dans un premier temps nous regarderons la valeur de K optimale pour les différents KNN, par la suite nous nous intéresserons à la taille de la fenêtre optimale, puis pour finir quelles méthodes fonctionnent le mieux selon la situation. Tout le code et les résultats correspondant aux expériences peuvent être trouvés sur github. \footnote{https://github.com/rootNico/PLDAC}
-\section{Description des différents dataset}
+\section{Description des différents datasets}
 \subsection{Description du dataset eye close/eye open}
-Le dataset eye close/eye open contient les données enregistrées avec un casque EEG où l'on a demandé aux participants d'ouvrir ou de fermer les yeux a certain moment. La tâche a accomplir est de classifier à chaque enregistrement si la personne a les yeux ouverts ou fermés.\\
+Le dataset eye close/eye open contient les données enregistrées avec un casque EEG où l'on a demandé aux participants d'ouvrir ou de fermer les yeux à certains moments. La tâche à accomplir est de classifier à chaque enregistrement si la personne a les yeux ouverts ou fermés.\\
 \\
-Le signal est échantillonné à 512Hz. Il y a 7 femmes et 13 hommes pour un total de 20 participants pour ce dataset. L'age moyen est de 25.8 ans avec un écart type de 5.27 et une médiane a 25.5 ans. 18 participants ont entre 19 et 28 ans et deux participants ont respectivement 33 ans et 44 ans.Le casque d'enregistrement est composé de 16 électrodes.\\
+Le signal est échantillonné à 512Hz. Il y a 7 femmes et 13 hommes pour un total de 20 participants pour ce dataset. L'age moyen est de 25.8 ans avec un écart type de 5.27 et une médiane de 25.5 ans. 18 participants ont entre 19 et 28 ans et deux participants ont respectivement 33 ans et 44 ans. Le casque d'enregistrement est composé de 16 électrodes.\\
 \\
-On commence par visualiser le signal des 16 électrodes ainsi que leurs labels associés au cours du temps. On peut voir que cette tâche, même si c'est une tâche relativement facile pour une machine comme nous allons le voir plus loin, elle reste très difficile voir impossible pour un humain.\\
+On commence par visualiser le signal des 16 électrodes ainsi que les labels associés au cours du temps. On peut voir que cette tâche, même si c'est une tâche relativement facile pour une machine, reste très difficile voir impossible pour un humain.\\
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.8]{images/donnees_entree.png}
@@ -270,43 +281,51 @@ Il y a 24 participants qui ont participé à l’éxperience (12 femmes), avec u
 \end{figure}
 
 Ce dataset a été enregistré avec les participants placés devant un pc ou une grille d'alien était représenté sur un écran avec un alien en particulier qui était en rouge. Le but pour le participant est de viser l'alien rouge. Pour cela 12 flashs dont 2 comprennent l'alien ciblé sont émis, le but de l'algorithme est de voir par quel flash le participant est intéressé. Un flash est composé de 
-6 alien. En tout il y avait 36 alien sur l’écran, une grille de 6X6. Il y a plusieurs tentatives pour détruire l'alien.\\
-Les deux tâches suivantes sont à effectuer mais comme nous allons le voir dans la partie résultat nous n'avons pas toute les informations pour traiter la deuxième tache.\\
+6 alien. En tout il y avait 36 aliens sur l’écran, une grille de 6X6. Il y a plusieurs tentatives pour détruire l'alien.\\
+Les deux tâches suivantes sont à effectuer :\\
 Première tache : Classification binaire (le flash nous intéresse, s'il y a l'alien cible dedans)\\
 Deuxième tache : Il nous faut trouver les deux flashs comprenant l'alien ciblé dans le groupe des 12 flashs.\\
+Mais comme nous allons le voir dans la partie résultat nous n'avons pas toute les informations pour traiter la deuxième tache.
 
-Plusieurs dataset utilisent ce paradigme de P300. On présente un stimulus a un participant et environ 300 ms après on peut détecter une activité cérébrale. En le répétant plusieurs fois cela permet a l'utilisateur de faire un choix par la pensée.\\
+Plusieurs datasets utilisent ce paradigme de P300. On présente un stimulus à un participant et environ 300 ms après on peut détecter une activité cérébrale. En répétant plusieurs fois l'opération, cela permet a l'utilisateur de faire un choix par la pensée.\\
 
-
-Figure 4 : Par la suite on peut voir sur l'image de droite le potentiel de l’électrode numéro 3 selon la classe au cours du temps. Et pour se rendre un peu mieux compte de la difficulté de la tâche on peut voir sur le graphique de gauche la moyenne sur tous les essais avec l’écart type, on peut différencier les deux classes mais l’écart entre les moyennes est très petit en comparaison des grandes valeurs des écarts types. Les graphiques sur les autres électrodes montrent tous à peu prêt la même chose ou parfois même encore moins d’écart de moyenne entre les deux classes.
 \begin{figure*}[]
-        \centering
-        \begin{subfigure}[b]{0.475\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]{images/visuel_classe_mean_std-1.png}
-            \caption[Network2]%
+	\centering
+    \begin{subfigure}[]{0.475\textwidth}
+    	\centering
+        \includegraphics[width=\textwidth]{images/visuel_classe_mean_std-1.png}
+        \caption[Network2]%
             {{\small visuel classe mean std}}    
-            \label{fig:mean and std of net14}
-        \end{subfigure}
-        \hfill
-        \begin{subfigure}[b]{0.475\textwidth}  
-            \centering 
-            \includegraphics[width=\textwidth]{images/visuel_data_0-1.png}
-            \caption[]%
+        \label{fig:mean and std of net14}
+	\end{subfigure}
+    \hfill
+    \begin{subfigure}[]{0.475\textwidth}  
+     	\centering 
+        \includegraphics[width=\textwidth]{images/visuel_data_0-1.png}
+        \caption[]%
             {{\small visuel data 0-1 }}    
-            \label{fig:mean and std of net24}
-        \end{subfigure}
-        \caption[ Visualisation des classes]
+        \label{fig:mean and std of net24}
+    \end{subfigure}
+    \caption[ Visualisation des classes]
         {\small Visualisation des classes} 
-        \label{fig:mean and std of nets}
-    \end{figure*}
+    \label{fig:mean and std of nets}
+\end{figure*}
     
+    
+Figure 4 : Par la suite on peut voir sur l'image de droite le potentiel de l’électrode numéro 3 selon la classe au cours du temps. Et pour se rendre un peu mieux compte de la difficulté de la tâche on peut voir sur le graphique de gauche la moyenne sur tous les essais avec l’écart type, on peut différencier les deux classes mais l’écart entre les moyennes est très petit en comparaison des grandes valeurs des écarts types. Les graphiques sur les autres électrodes montrent tous à peu prêt la même chose ou parfois même encore moins d’écart de moyenne entre les deux classes.
+
 \subsection{Description du dataset DecMeg2014}
 La tâche que l'on doit réaliser avec le dataset DecMeg2014 est une classification binaire. Le but est de déterminer si le stimulus visuel est un visage clair ou brouillé qui est montré au participant. L'activité de leurs cerveaux est enregistré grâce à un appareil de magnetoencéphalographie. Cet appareil dispose de 306 magnétomètres.
 \\
 Ce dataset est extrait d'une compétition kaggle du même nom.
 \\
 Il y a eu 23 participants à ce test avec environ 580 essais par participant. Nous disposons de 16 participants avec leurs labels associé et 7 participants où nous avons uniquement les données.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.4]{images/DECMEG2014.png}
+\end{center}
+\caption{Taches DecMeg2014}
+\end{figure}
 
 
 \section{Étude sur les valeurs de k pour les différents KNN}
@@ -335,9 +354,10 @@ Il y a eu 23 participants à ce test avec environ 580 essais par participant. No
     
 
 
-On peut voir que la valeur de K=1 est meilleur.
+Sur la figure ci-dessous on peut voir que la valeur de K=1 est meilleur dans tous les cas : signaux brut, covariance sur les essais, et avec la géométrie de Riemann.
 \section{Étude sur la longueur de la fenêtre optimale}
-\begin{figure*}[]
+La longueur de la fenêtre c'est la durée utilisé pour découper un signal continu en plusieurs essais.
+\begin{figure*}[h]
         \centering
         \begin{subfigure}[b]{0.475\textwidth}
             \centering
@@ -371,10 +391,9 @@ On peut voir que la valeur de K=1 est meilleur.
             \label{fig:mean and std of net44}
         \end{subfigure}
         \caption[ F1 Score(en cross validation) en fonction du nombre de données par paquet]
-        {\small F1 Score(en cross validation) en fonction du nombre de données par paquet} 
+        {\small F1 Score(en cross validation) en fonction du nombre de données dans la fenêtre temporelle} 
         \label{fig:mean and std of nets}
 \end{figure*}
-
 Les résultats sont obtenus avec une cross validation sur tous les participants mais en ne prenant en compte qu'un fichier par participant pour une question de mémoire vive.
 F1-score des différents algorithmes sur brain invader : \\
 \begin{table}[H]
@@ -382,26 +401,27 @@ F1-score des différents algorithmes sur brain invader : \\
 \hline
 nom de l'algorithme                                                              & 1 seconde         & 0,1 seconde       & 0,04 seconde      & moyenne           \\
 \hline
-passe bas KNN & 0,002487562189055 & 0,126738794435858 & 0,004889975550122 & 0,044705444058345 \\
-knn tf & 0,019002375296912 & 0,029919447640967 & 0,124804992199688 & 0,057908938379189 \\
-knn brut            & 0,071287128712871 & 0,104810996563574 & 0,027681660899654 & 0,067926595392033 \\
-SVM brut       & 0,181818181818182 & 0                 & 0,214285714285714 & 0,132034632034632 \\
-cov SVM & 0                 & 0,181818181818182 & 0,235294117647059 & 0,13903743315508  \\
-SVM tf & 0,125             & 0,125             & 0,181818181818182 & 0,143939393939394 \\
-passe bas SVM & 0,214285714285714 & 0,214285714285714 & 0,235294117647059 & 0,221288515406162 \\
-riemann MDM     & 0,269889224572004 & 0,256206554121152 & 0,249661705006766 & 0,258585827899974\\
+passe bas KNN & 0,002487562189055 & \colorbox{gray!30}{0,126738794435858} & 0,004889975550122 & 0,044705444058345 \\
+knn tf & 0,019002375296912 & 0,029919447640967 & \colorbox{gray!30}{0,124804992199688} & 0,057908938379189 \\
+knn brut            & 0,071287128712871 & \colorbox{gray!30}{0,104810996563574} & 0,027681660899654 & 0,067926595392033 \\
+SVM brut       & 0,181818181818182 & 0                 & \colorbox{gray!30}{0,214285714285714} & 0,132034632034632 \\
+cov SVM & 0                 & 0,181818181818182 & \colorbox{gray!30}{0,235294117647059} & 0,13903743315508  \\
+SVM tf & 0,125             & 0,125             & \colorbox{gray!30}{0,181818181818182} & 0,143939393939394 \\
+passe bas SVM & 0,214285714285714 & 0,214285714285714 & \colorbox{gray!30}{0,235294117647059} & 0,221288515406162 \\
+riemann MDM     & \colorbox{gray!30}{0,269889224572004} & 0,256206554121152 & 0,249661705006766 & 0,258585827899974\\
 \hline
-moyenne	& 0,110471273359342 &	0,129847461108181& 	0,159216308131781 & 0,133178347533101\\
+moyenne	& 0,110471273359342 &	0,129847461108181& 	\colorbox{gray!30}{0,159216308131781}\\
 \hline
 \end{tabular}
 \captionof{table}{Résultat sur le dataset brain invader 1 participant}
 \end{table}
-Dans les figures ci-dessous on remarque qu'avec des tailles de fenêtre très petite on a de très bon résultat mais cela vient du fait qu'on utilise des algorithmes tel que le KNN et le MDM et que de plus on est sur un seul participant, donc on va juste chercher à faire correspondre les signaux qui sont proche temporellement et comme on modifie les labels par pallier, cela donne de bon résultat de retrouvé les voisins proches et dire le même label. Et pour le MDM c'est la même chose on trouve un centre géométrique qui fonctionne mais uniquement pour ce participant. Je pense qu'on ne peut pas tirer assez d'information sur les corrélations des différents canaux pour faire du transfert, je n'ai malheureusement pas eu le temps de faire les tests.    
+On surligne en gris chaque meilleurs score par ligne.\\
+Dans 3 des figures ci-dessus on remarque qu'avec des tailles de fenêtre très petites on a de très bons résultats. Cela vient du fait qu'on utilise des algorithmes tels que le KNN et le MDM et que, de plus, on est sur un seul participant. Donc on va juste chercher à faire correspondre les signaux qui sont proches temporellement et comme on modifie les labels par palier, cela donne de bon résultats de retrouver les voisins proches et prédire le même label. Je pense qu'on ne peut pas tirer assez d'information sur les corrélations des différents canaux pour faire du transfert, je n'ai malheureusement pas eu le temps de faire les tests.    
 
 \section{Comparaison des différentes méthodes}
-Tous les résultats suivant ont été obtenu avec les données d'un seul participant, avec une validation croisée en 5 parties.
+Tous les résultats suivant ont été obtenus avec les données d'un seul participant, avec une validation croisée en 5 parties.
 \subsection{Tableau récapitulatif eye close/open}
-Ci-dessous nous avons le tableau récapitulatif des F1-score en validation croisée en 5 parties sur les données d'un seul participant . On remarque que les approches de Riemann ont les meilleurs scores et ensuite le SVM avec transformée de Fourier.\\
+Ci-dessous nous avons le tableau récapitulatif des F1-score en validation croisée en 5 parties sur les données d'un seul participant. On remarque que les approches de Riemann ont les meilleurs scores et ensuite le SVM avec transformée de Fourier.\\
 \begin{center}
 \begin{tabular}{|l|c|}
   \hline
@@ -420,12 +440,12 @@ Ci-dessous nous avons le tableau récapitulatif des F1-score en validation crois
 \captionof{table}{Résultat sur le dataset eye close/open}
 \end{center}
 \subsection{Brain Invader}
-Comme on peut le voir(ref : Table 1) tout les algorithmes ne sont pas présent, certain était trop long à faire tourner et d'autre n'avais pas encore été introduit et le seront pour le dataset DecMeg2014 qui suit. Aucun prétraitement n'a été fait sur le signal pour la géométrie de Riemann et cela change beaucoup les résultats juste un filtre passe bande peut améliorer les résultats comme on va le voir par la suite. C'est aussi pour cela qu'on retrouve un SVM en deuxième position. Il n'a pas été possible de comparer les résultats avec les résultats de l'auteur du dataset car il manquait la composition des groupe d'alien qui clignotait.\\
+Comme on peut le voir (ref : Table 1) tous les algorithmes ne sont pas présents, certains était trop longs à faire tourner et d'autre n'avaient pas encore été introduis et le seront pour le dataset DecMeg2014 qui suit. Peu de  prétraitement a été fait sur le signal(aucun filtre fréquentielle ni spatial) pour la géométrie de Riemann et cela change beaucoup les résultats juste un filtre passe bande peut améliorer les résultats comme on va le voir par la suite. C'est aussi pour cela qu'on retrouve un SVM en deuxième position. Il n'a pas été possible de comparer les résultats avec les résultats de l'auteur du dataset car il manquait la composition des groupes d'aliens qui clignotaient.\\
 \subsection{DecMeg2014}
 
 \paragraph{Méthodes d'évaluation}
 
-Sur le dernier dataset DecMeg2014 nous disposons des données pour 16 participants, nous procéderons donc comme décris ci-dessous pour l'évaluation de nos différentes méthodes :\\
+Sur le dernier dataset DecMeg2014 nous disposons des données pour 16 participants, nous procéderons donc comme décrit ci-dessous pour l'évaluation de nos différentes méthodes :\\
 Méthode 1 : entraînement sur une partie de 1 et eval sur 1 (validation croisée sur un seul)\\
 Méthode 2 : entraînement sur 1 et évaluation sur tous les autres (16 expériences a faire)\\
 Méthode 3 : entraînement sur 15 et évaluation sur 1 (16 expériences a faire )\\
@@ -433,23 +453,27 @@ Méthode 4 : entraînement sur 16 et eval sur 16 tout mélanger avec validation 
 \\
 Ces façons d'évaluer nous permettent de tester plusieurs caractéristiques de nos modèles dont la capacité de transfert d'un participant à l'autre.
 \\
-Pour chaque test on sauvegardera le F1-score sur la classe minoritaire.
+Pour chaque test on sauvegardera le F1-score moyen sur les deux classes.
 \\
+
 \begin{table}[H]
+\begin{center}
 \begin{tabular}{|l|l|l|l|l|}
 \hline
 Nom de l’algorithme & Méthode 1         & Méthode 2           & Méthode 3          & Méthode 4          \\
 \hline
-CTR                 & 0,717 & 0.182 & 0.673 & 0.693 \\
-conv1D              & 0,133         & 0.04                & 0.09               & 0.26               \\
-passe bas SVM       & 0.0                & 0.0                   & 0.0                  & 0                  \\
-riemann MDM         & 0,5524            & 0.12                & 0.43               & 0.49               \\
-SVM brut            & 0.0                 & 0.0                   & 0                  & 0.0                  \\
-SVM TF              & 0.0                 & 0.0                   & 0.0                  & 0.0      \\
+CTR                 & 0,717 & 0.445 & 0.673 & 0.693 \\
+conv1D              & 0,133         & 0.04                & 0.09               & 0.33               \\
+passe bas SVM       & 0.33                & 0.33                   & 0.33                  & 0.33                  \\
+riemann MDM         & 0,5524            & 0.12                & 0.43               & 0.535               \\
+SVM brut            & 0.165                 & 0.33                   & 0.33                  & 0.33                  \\
+SVM TF              & 0.33                 & 0.33                   & 0.33                  & 0.33      \\
 \hline           
 \end{tabular}
+\end{center}
 \end{table}
-
+On a beaucoup de 0.33, cela correspond au fait que le modèle prédit toujours la même classe.\\
+Grace à la méthode 3 on peut voir que les méthodes de Riemann sont les méthodes qui fonctionne le mieux pour le transfert et avec une marge significative. De plus cela montre la robustesse des méthodes de Riemann qui même avec un casque à électrodes placé différemment et un niveau de bruit élevé l'algorithme peut faire de bonne prédiction sur un nouveau participant.
 \part{Conclusion}
 D'après nos résultat nous pouvons conclure que d'une part les prétraitement sur le signal sont très important et que pour le moment avec des méthodes classiques de deep learning on n'arrive pas à faire mieux qu'avec des méthodes riemanniennes. Il pourrait être intéressant de combiner des méthodes de deep learning et de géométrie de Riemann.
 \bibliographystyle{ieeetr}

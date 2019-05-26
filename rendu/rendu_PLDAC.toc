@@ -1,28 +1,28 @@
 \babel@toc {french}{}
 \contentsline {part}{I\hspace {1em}Introduction}{1}
 \contentsline {part}{II\hspace {1em}\IeC {\'E}tat de l'art - la g\IeC {\'e}om\IeC {\'e}trie de Riemann}{2}
-\contentsline {section}{\numberline {1}Distance}{2}
-\contentsline {section}{\numberline {2}Moyenne g\IeC {\'e}om\IeC {\'e}trique}{3}
-\contentsline {section}{\numberline {3}Espace tangent}{3}
-\contentsline {part}{III\hspace {1em}Plan d'exp\IeC {\'e}rience}{3}
+\contentsline {section}{\numberline {1}Espace tangent}{2}
+\contentsline {section}{\numberline {2}Distance globale}{3}
+\contentsline {section}{\numberline {3}Barycentre riemannien}{4}
+\contentsline {part}{III\hspace {1em}Plan d'exp\IeC {\'e}rience}{4}
 \contentsline {section}{\numberline {1}Arbre des mod\IeC {\`e}les}{4}
-\contentsline {section}{\numberline {2}Format des donn\IeC {\'e}es}{4}
+\contentsline {section}{\numberline {2}Format des donn\IeC {\'e}es}{5}
 \contentsline {section}{\numberline {3}Description des mod\IeC {\`e}les}{5}
 \contentsline {paragraph}{1 et 2 - SVM et KNN avec une transform\IeC {\'e}e de Fourier}{5}
-\contentsline {paragraph}{3,4 et 5 - SVM,MDM et KNN avec matrice de covariance }{5}
-\contentsline {paragraph}{6 et 7 - SVM et KNN sur les donn\IeC {\'e}es brutes}{5}
-\contentsline {paragraph}{8 et 9 - SVM et KNN avec un filtre passe bas}{5}
+\contentsline {paragraph}{3,4 et 5 - SVM,MDM et KNN avec matrice de covariance }{6}
+\contentsline {paragraph}{6 et 7 - SVM et KNN sur les donn\IeC {\'e}es brutes}{6}
+\contentsline {paragraph}{8 et 9 - SVM et KNN avec un filtre passe bas}{6}
 \contentsline {paragraph}{8 - Cha\IeC {\^\i }ne de traitement riemannienne}{6}
-\contentsline {part}{IV\hspace {1em}Experimentations}{7}
-\contentsline {section}{\numberline {1}Description des diff\IeC {\'e}rents dataset}{8}
-\contentsline {subsection}{\numberline {1.1}Description du dataset eye close/eye open}{8}
-\contentsline {subsection}{\numberline {1.2}Description du dataset brain invader}{9}
-\contentsline {subsection}{\numberline {1.3}Description du dataset DecMeg2014}{10}
-\contentsline {section}{\numberline {2}\IeC {\'E}tude sur les valeurs de k pour les diff\IeC {\'e}rents KNN}{11}
-\contentsline {section}{\numberline {3}\IeC {\'E}tude sur la longueur de la fen\IeC {\^e}tre optimale}{11}
-\contentsline {section}{\numberline {4}Comparaison des diff\IeC {\'e}rentes m\IeC {\'e}thodes}{12}
-\contentsline {subsection}{\numberline {4.1}Tableau r\IeC {\'e}capitulatif eye close/open}{12}
-\contentsline {subsection}{\numberline {4.2}Brain Invader}{14}
-\contentsline {subsection}{\numberline {4.3}DecMeg2014}{14}
-\contentsline {paragraph}{M\IeC {\'e}thodes d'\IeC {\'e}valuation}{14}
-\contentsline {part}{V\hspace {1em}Conclusion}{15}
+\contentsline {part}{IV\hspace {1em}Experimentations}{8}
+\contentsline {section}{\numberline {1}Description des diff\IeC {\'e}rents datasets}{9}
+\contentsline {subsection}{\numberline {1.1}Description du dataset eye close/eye open}{9}
+\contentsline {subsection}{\numberline {1.2}Description du dataset brain invader}{10}
+\contentsline {subsection}{\numberline {1.3}Description du dataset DecMeg2014}{12}
+\contentsline {section}{\numberline {2}\IeC {\'E}tude sur les valeurs de k pour les diff\IeC {\'e}rents KNN}{12}
+\contentsline {section}{\numberline {3}\IeC {\'E}tude sur la longueur de la fen\IeC {\^e}tre optimale}{13}
+\contentsline {section}{\numberline {4}Comparaison des diff\IeC {\'e}rentes m\IeC {\'e}thodes}{15}
+\contentsline {subsection}{\numberline {4.1}Tableau r\IeC {\'e}capitulatif eye close/open}{15}
+\contentsline {subsection}{\numberline {4.2}Brain Invader}{15}
+\contentsline {subsection}{\numberline {4.3}DecMeg2014}{16}
+\contentsline {paragraph}{M\IeC {\'e}thodes d'\IeC {\'e}valuation}{16}
+\contentsline {part}{V\hspace {1em}Conclusion}{16}
