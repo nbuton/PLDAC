@@ -2,16 +2,36 @@
 
 \bibitem{garcia_support_2003}
 G.~N. Garcia, T.~Ebrahimi, and J.~Vesin, ``Support vector {EEG} classification
-  in the fourier and time-frequency correlation domains,'' pp.~591--594.
+  in the fourier and time-frequency correlation domains,'' in {\em First
+  International {IEEE} {EMBS} Conference on Neural Engineering, 2003.
+  Conference Proceedings.}, pp.~591--594.
 
 \bibitem{congedo_riemannian_2017}
 M.~Congedo, A.~Barachant, and R.~Bhatia, ``Riemannian geometry for {EEG}-based
   brain-computer interfaces; a primer and a review,'' vol.~4, no.~3,
   pp.~155--174.
 
+\bibitem{moakher_differential_2005}
+M.~Moakher, ``A differential geometric approach to the geometric mean of
+  symmetric positive-definite matrices,'' vol.~26, no.~3, pp.~735--747.
+
+\bibitem{cours_geometrie_riemann}
+``Géométrieméthodes riemanniennes pour l’apprentissageréseaux de neurones
+  du second ordrefouille de données et media sociauxcours 5 – géométrie
+  riemannienne pour l’apprentissage.''
+
+\bibitem{barachant_code_2019}
+a.~barachant, ``Code and documentation for the winning solution to the
+  {DecMeg}2014 challenge https://www.kaggle.com/c/decoding-the-human-brain:
+  alexandrebarachant/{DecMeg}2014.''
+\newblock original-date: 2014-08-03T15:02:06Z.
+
 \bibitem{rivet_xdawn_2009}
 B.~Rivet, A.~Souloumiac, V.~Attina, and G.~Gibert, ``{xDAWN} algorithm to
   enhance evoked potentials: application to brain-computer interface,''
   vol.~56, no.~8, pp.~2035--2043.
+
+\bibitem{noauthor_decmeg2014_nodate}
+``{DecMeg}2014 - decoding the human brain {\textbar} kaggle.''
 
 \end{thebibliography}

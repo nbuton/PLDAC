@@ -125,7 +125,7 @@ L'espace tangent est un espace euclidien. On peut approximer des distances de l'
 
 
 \section{Distance globale}
-La distance géodésique est la longueur du plus court chemin entre deux point sur la variété. On peut calculer cette distance par morceau en faisant des petit pas et avec la distance locale, mais de la cas générale on n'a pas de formule. Par contre dans le cas des matrices symétriques et définies positives on a la formule qui est la suivante :
+La distance géodésique est la longueur du plus court chemin entre deux point sur la variété. On peut calculer cette distance par morceau en faisant des petit pas et avec la distance locale, mais de la cas générale on n'a pas de formule. Par contre dans le cas des matrices symétriques et définies positives on a la formule qui est la suivante \cite{moakher_differential_2005} :
 
 Soit deux matrices $\mathbf{\Sigma}_1$ et $\mathbf{\Sigma}_2$ symétriques et définies positives.
 \begin{equation}
@@ -150,7 +150,7 @@ La définition du barycentre est :
 \end{equation}
 Malheureusement contrairement au cas euclidien ce n'est pas la même formule que la moyenne arithmétique. Et même restreins aux matrices SDP nous ne possédons pas d'expression explicite. Nous devons donc utiliser un algorithme itératif. Nous définissons donc une matrice $\mathbf{\Sigma}_i$, matrice moyenne que nous initialisons aléatoirement et ensuite on procède par descente de gradient pour approximer le barycentre.\\
 \\
-Pour plus de détails sur la géometrie de riemann il y a cet article d'A. Barachant \cite{congedo_riemannian_2017}.
+Pour plus de détails sur la géometrie de riemann il y a cet article d'A. Barachant \cite{congedo_riemannian_2017} et ce cours d'introduction \cite{cours_geometrie_riemann}.
 \part{Plan d'expérience}
 \section{Arbre des modèles}
 Nous allons représenter à l'aide d'un arbre les différentes méthodes que nous allons tester par la suite.
@@ -208,7 +208,7 @@ Cette approche est la plus simple et on utilise simplement un vecteur de la tail
 \paragraph{8 et 9 - SVM et KNN avec un filtre passe bas}\mbox{}\\
 Nous définissons un filtre passe bas avec la moyenne sur un fenêtre glissante. Donc nous avons deux paramètres le premier est la longueur de la fenêtre, sur combien on moyenne et le deuxième est le décalage de cette fenêtre. On peut mettre la longueur de la fenêtre égale au décalage si on ne veux pas de chevauchement.
 \paragraph{8 - Chaîne de traitement riemannienne}\mbox{}\\
-Par la suite je vais décrire la chaîne de traitement étape par étape. Cette chaîne de traitement est spécifique au dataset DecMeg2014.\\
+Par la suite je vais décrire la chaîne de traitement étape par étape. Cette chaîne de traitement est spécifique au dataset DecMeg2014\cite{barachant_code_2019}.\\
 1 - On garde uniquement 1 seconde sur les 1.5 seconde de signal car le stimulus intervient qu’après 0.5 seconde. \\
 2 - On filtre le signal avec un filtre passe bande de Butterworth d'ordre 5 entre 1Hz et 20Hz.\\
 3 - Par la suite on effectue un filtrage spatial, on extrait $C_{virt}$ canaux virtuels par classe et K le nombre de classes \cite{rivet_xdawn_2009}. On commence par définir la moyenne sur chaque classe :
@@ -317,7 +317,7 @@ Figure 4 : Par la suite on peut voir sur l'image de droite le potentiel de l’�
 \subsection{Description du dataset DecMeg2014}
 La tâche que l'on doit réaliser avec le dataset DecMeg2014 est une classification binaire. Le but est de déterminer si le stimulus visuel est un visage clair ou brouillé qui est montré au participant. L'activité de leurs cerveaux est enregistré grâce à un appareil de magnetoencéphalographie. Cet appareil dispose de 306 magnétomètres.
 \\
-Ce dataset est extrait d'une compétition kaggle du même nom.
+Ce dataset est extrait d'une compétition kaggle du même nom\cite{noauthor_decmeg2014_nodate}.
 \\
 Il y a eu 23 participants à ce test avec environ 580 essais par participant. Nous disposons de 16 participants avec leurs labels associé et 7 participants où nous avons uniquement les données.
 \begin{figure}[H]

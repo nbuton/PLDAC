@@ -3,51 +3,58 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: rendu_PLDAC.aux
 The style file: ieeetr.bst
 Database file #1: MyLibrary.bib
-Warning--empty journal in garcia_support_2003
+Warning--entry type for "noauthor_decmeg2014_nodate" isn't style-file defined
+--line 87 of file MyLibrary.bib
+Warning--entry type for "cours_geometrie_riemann" isn't style-file defined
+--line 94 of file MyLibrary.bib
+Warning--entry type for "barachant_code_2019" isn't style-file defined
+--line 131 of file MyLibrary.bib
 Warning--empty year in garcia_support_2003
 Warning--empty journal in congedo_riemannian_2017
 Warning--empty year in congedo_riemannian_2017
+Warning--empty journal in moakher_differential_2005
+Warning--empty year in moakher_differential_2005
 Warning--empty journal in rivet_xdawn_2009
 Warning--empty year in rivet_xdawn_2009
-You've used 3 entries,
+You've used 7 entries,
             1876 wiz_defined-function locations,
-            492 strings with 4112 characters,
-and the built_in function-call counts, 1098 in all, are:
-= -- 111
-> -- 36
+            505 strings with 4784 characters,
+and the built_in function-call counts, 1753 in all, are:
+= -- 174
+> -- 46
 < -- 0
-+ -- 13
-- -- 10
-* -- 86
-:= -- 147
-add.period$ -- 3
-call.type$ -- 3
-change.case$ -- 3
++ -- 19
+- -- 12
+* -- 117
+:= -- 217
+add.period$ -- 5
+call.type$ -- 7
+change.case$ -- 7
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 53
-empty$ -- 94
-format.name$ -- 10
-if$ -- 260
+cite$ -- 14
+duplicate$ -- 86
+empty$ -- 185
+format.name$ -- 12
+if$ -- 433
 int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 3
-newline$ -- 12
-num.names$ -- 3
-pop$ -- 14
+int.to.str$ -- 7
+missing$ -- 4
+newline$ -- 25
+num.names$ -- 5
+pop$ -- 40
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 45
+skip$ -- 79
 stack$ -- 0
-substring$ -- 104
-swap$ -- 26
+substring$ -- 136
+swap$ -- 35
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 6
-while$ -- 12
-width$ -- 4
-write$ -- 27
-(There were 6 warnings)
+warning$ -- 7
+while$ -- 17
+width$ -- 8
+write$ -- 55
+(There were 10 warnings)
